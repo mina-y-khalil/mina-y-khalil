@@ -9,7 +9,8 @@
 - 🚀 Dedicated to delivering high-tech solutions with modern, high-quality UI designs  
 - ⚡ Bringing 10+ years of accounting experience into software engineering  
 - 💼 Currently working as an Accounting Analyst, leveraging strong problem-solving skills and management expertise  
-- 🎓 Holding a Bachelor's degree in Accounting and a Postgraduate Diploma in Global Business  
+- 🎓 Holding a Bachelor's degree in Accounting and a Postgraduate Diploma in Global Business
+- 🏅 Certified in Google IT Support Professional Certificate ([View Credential](https://www.coursera.org/account/accomplishments/specialization/certificate/A8TUJDFZGXNX))
 
 ## 🛠️ Tech Stack
 
