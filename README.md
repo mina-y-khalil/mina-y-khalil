@@ -4,7 +4,7 @@
 
 ## 🚀 About Me
 
-- 📚 App Academy (San Francisco, CA) – Full-Stack Software Engineering
+- 📚 App Academy (San Francisco, CA) – Full-Stack Software Engineer
 - 💻 Passionate about coding and building software & web applications
 - 🚀 Dedicated to delivering high-tech solutions with modern, high-quality UI designs
 - ⚡ Bringing 10+ years of accounting experience into software engineering
