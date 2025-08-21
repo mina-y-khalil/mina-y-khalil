@@ -4,11 +4,11 @@
 
 ## 🚀 About Me
 
-- 📚 App Academy (San Francisco, CA) – Full-Stack Software Engineering Graduate  
-- 💻 Passionate about coding and building software & web applications  
-- 🚀 Dedicated to delivering high-tech solutions with modern, high-quality UI designs  
-- ⚡ Bringing 10+ years of accounting experience into software engineering  
-- 💼 Currently working as an Accounting Analyst, leveraging strong problem-solving skills and management expertise  
+- 📚 App Academy (San Francisco, CA) – Full-Stack Software Engineering
+- 💻 Passionate about coding and building software & web applications
+- 🚀 Dedicated to delivering high-tech solutions with modern, high-quality UI designs
+- ⚡ Bringing 10+ years of accounting experience into software engineering
+- 💼 Currently working as an Accounting Analyst, leveraging strong problem-solving skills and management expertise
 - 🎓 Holding a Bachelor's degree in Accounting and a Postgraduate Diploma in Global Business
 - 🏅 Certified in Google IT Support Professional Certificate ([View Credential](https://www.coursera.org/account/accomplishments/specialization/certificate/A8TUJDFZGXNX))
 
@@ -41,15 +41,15 @@
 
 ## 🌟 Featured Projects
 
-- [RedeemBooks](https://github.com/mina-y-khalil/redeembooks-accounting-app) – Multi-company accounting management system  
-- [Pintrix](https://github.com/mina-y-khalil/Pintrix---Fullstack) – Pinterest clone with boards, pins, and comments  
-- [Windbnb](https://github.com/mina-y-khalil/Windbnb---Fullstack) – Airbnb-inspired booking platform  
+- [RedeemBooks](https://github.com/mina-y-khalil/redeembooks-accounting-app) – Multi-company accounting management system
+- [Pintrix](https://github.com/mina-y-khalil/Pintrix---Fullstack) – Pinterest clone with boards, pins, and comments
+- [Windbnb](https://github.com/mina-y-khalil/Windbnb---Fullstack) – Airbnb-inspired booking platform
 
-💡 *Check my [GitHub repositories](https://github.com/mina-y-khalil?tab=repositories) for more projects, small applications, and other interesting work!*  
+💡 _Check my [GitHub repositories](https://github.com/mina-y-khalil?tab=repositories) for more projects, small applications, and other interesting work!_
 
 ## 📫 Connect with Me
 
-- 💼 [LinkedIn](https://linkedin.com/in/mina-y-khalil)  
+- 💼 [LinkedIn](https://linkedin.com/in/mina-y-khalil)
 
 ---
 
