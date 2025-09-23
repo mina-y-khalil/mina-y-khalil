@@ -51,6 +51,12 @@
 
 💡 _Check my [GitHub repositories](https://github.com/mina-y-khalil?tab=repositories) for more projects, small applications, and other interesting work!_
 
+## 📊 GitHub Stats
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=mina-y-khalil&layout=compact&theme=tokyonight" />
+</p>
+
 ## 📫 Connect with Me
 
 - 💼 [LinkedIn](https://linkedin.com/in/mina-y-khalil)
