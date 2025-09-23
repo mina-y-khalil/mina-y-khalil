@@ -54,8 +54,12 @@
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=mina-y-khalil&layout=compact&theme=tokyonight" />
+  <img 
+    src="https://github-readme-stats.vercel.app/api/top-langs/?username=mina-y-khalil&layout=compact&theme=tokyonight&card_width=1000" 
+    alt="Top Langs" 
+  />
 </p>
+
 
 ## 📫 Connect with Me
 
