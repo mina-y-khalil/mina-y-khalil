@@ -88,13 +88,38 @@ h1, h2, h3, h4, h5, h6 { color: var(--heading-color); font-family: var(--heading
 .header .logo img { max-height: 32px; margin-right: 8px; }
 .header .logo h1 { font-size: 24px; margin: 0; font-weight: 700; color: var(--heading-color); }
 
-.header .social-links { margin: 0 0 20px 0; }
-.header .social-links a {
-  font-size: 16px; display: inline-flex; align-items: center; justify-content: center;
-  background: color-mix(in srgb, var(--default-color), transparent 90%); color: var(--default-color);
-  margin: 0 4px; border-radius: 50%; width: 40px; height: 40px; transition: 0.3s;
+/* Social links container spacing */
+.header .social-links {
+  margin: 0 0 20px 0;
 }
-.header .social-links a:hover { color: var(--contrast-color); background: var(--accent-color); }
+
+/* Badge styling for each social link */
+.header .social-links a {
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, var(--default-color), transparent 90%);
+  color: var(--default-color);
+  margin: 0 4px;
+  border-radius: 50%;
+  width: 60px;   /* smaller outer circle */
+  height: 60px;  /* smaller outer circle */
+  transition: 0.3s;
+}
+
+/* Make the inner Lottie animation larger and let mouse events reach the anchor */
+.header .social-links a lottie-player {
+  width: 44px;
+  height: 44px;
+  pointer-events: none;
+}
+
+/* Hover state: change foreground and background */
+.header .social-links a:hover {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+}
 
 @media (min-width: 1200px) { .header~main, .header~#footer { margin-left: 300px; } }
 @media (max-width: 1199px) { .header { left: -100%; } }
