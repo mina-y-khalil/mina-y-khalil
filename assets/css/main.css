@@ -346,3 +346,14 @@ section, .section { color: var(--default-color); background-color: var(--backgro
   object-fit: cover;
   display: block;
 }
+
+
+.portfolio-lottie {
+  text-align: center;
+  margin: 10px 0 20px !important;
+}
+.portfolio-lottie lottie-player {
+  width: 320px;
+  height: 320px;
+  display: inline-block;
+}
