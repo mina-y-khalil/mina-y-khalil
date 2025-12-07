@@ -56,7 +56,7 @@
 
 <p align="center">
   <img
-  src="https://github-readme-stats.vercel.app/api/top-langs/?username=mina-y-khalil&layout=compact&theme=tokyonight&card_width=1000&count_private=true"
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=mina-y-khalil&layout=compact&theme=tokyonight&card_width=1000" />
   alt="Top Languages"
 />
 
