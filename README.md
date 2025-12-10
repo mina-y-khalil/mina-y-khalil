@@ -55,6 +55,7 @@
 💡 _Check my [GitHub repositories](https://github.com/mina-y-khalil?tab=repositories) for more projects, small applications, and other interesting work!_
 
 
+<!--
 ## 📊 GitHub Stats
 
 <p align="center">
@@ -63,8 +64,7 @@
     alt="Top Languages"
   />
 </p>
-
-
+-->
 
 
 ## 📫 Connect with Me
