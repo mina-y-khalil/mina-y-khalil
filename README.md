@@ -55,14 +55,10 @@
 💡 _Check my [GitHub repositories](https://github.com/mina-y-khalil?tab=repositories) for more projects, small applications, and other interesting work!_
 
 
-
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img
-    src="https://github-readme-stats.vercel.app/api/top-langs/?username=mina-y-khalil&layout=compact&theme=tokyonight&cache_seconds=3600"
-    alt="Top Languages"
-  />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=mina-y-khalil&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" alt="Top Languages"/>
 </p>
 
 
