@@ -58,8 +58,16 @@
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img src="http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=mina-y-khalil&theme=github_dark" alt="Top Languages"/>
-  <img src="http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=mina-y-khalil&theme=github_dark" alt="Most Used Languages"/>
+  <img src="https://github-readme-stats.vercel.app/api?username=mina-y-khalil&show_icons=true&theme=radical&hide_border=true&count_private=true&include_all_commits=true" alt="GitHub Stats"/>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=mina-y-khalil&theme=radical&hide_border=true" alt="GitHub Streak"/>
+</p>
+
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=mina-y-khalil&theme=react-dark&hide_border=true&area=true" alt="Contribution Graph"/>
+</p>
+
+<p align="center">
+  <img src="http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=mina-y-khalil&theme=radical" alt="Profile Summary"/>
 </p>
 
 
