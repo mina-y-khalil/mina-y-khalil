@@ -58,16 +58,18 @@
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=mina-y-khalil&show_icons=true&theme=radical&hide_border=true&count_private=true&include_all_commits=true" alt="GitHub Stats"/>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=mina-y-khalil&theme=radical&hide_border=true" alt="GitHub Streak"/>
+  <img src="https://github-readme-stats.vercel.app/api?username=mina-y-khalil&show_icons=true&theme=chartreuse-dark&hide_border=true&bg_color=000000&title_color=00ff41&icon_color=00ff41&text_color=00ff41&count_private=true" alt="GitHub Stats"/>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=mina-y-khalil&theme=black-ice&hide_border=true&background=000000&stroke=00ff41&ring=00ff41&fire=00ff41&currStreakLabel=00ff41" alt="Streak Stats"/>
 </p>
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=mina-y-khalil&theme=react-dark&hide_border=true&area=true" alt="Contribution Graph"/>
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=mina-y-khalil&theme=github-compact&hide_border=true&bg_color=000000&color=00ff41&line=00ff41&point=ffffff&area=true&area_color=00ff41" width="100%" alt="Activity Graph"/>
 </p>
 
 <p align="center">
-  <img src="http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=mina-y-khalil&theme=radical" alt="Profile Summary"/>
+  <img src="http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=mina-y-khalil&theme=radical&utcOffset=8" alt="Productive Time"/>
+  <img src="http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=mina-y-khalil&theme=radical" alt="Languages"/>
+  <img src="http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=mina-y-khalil&theme=radical" alt="Commits by Language"/>
 </p>
 
 
