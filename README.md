@@ -58,7 +58,8 @@
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=mina-y-khalil&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" alt="Top Languages"/>
+  <img src="http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=mina-y-khalil&theme=github_dark" alt="Top Languages"/>
+  <img src="http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=mina-y-khalil&theme=github_dark" alt="Most Used Languages"/>
 </p>
 
 
