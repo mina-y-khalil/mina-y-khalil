@@ -64,12 +64,31 @@ Check out my [portfolio](https://mina-y-khalil.github.io/mina-y-khalil/) for cli
 ## GitHub Stats
 
 <p align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=mina-y-khalil&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
+</p>
+
+<p align="center">
   <img src="http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=mina-y-khalil&theme=github_dark" alt="Top Languages"/>
   <img src="http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=mina-y-khalil&theme=github_dark" alt="Most Used Languages"/>
 </p>
 
 ## Connect
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/mina-y-khalil)
-[![Portfolio](https://img.shields.io/badge/Portfolio-080075?style=for-the-badge&logo=googlechrome&logoColor=white)](https://mina-y-khalil.github.io/mina-y-khalil/)
-[![Email](https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mina.y.khalil90@gmail.com)
+<p align="center">
+  <a href="https://linkedin.com/in/mina-y-khalil" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+  <a href="https://mina-y-khalil.github.io/mina-y-khalil/" target="_blank">
+    <img src="https://img.shields.io/badge/Portfolio-080075?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Portfolio" />
+  </a>
+  <a href="mailto:mina.y.khalil90@gmail.com">
+    <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+  </a>
+  <a href="https://github.com/mina-y-khalil" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+  </a>
+</p>
+
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=mina-y-khalil&style=for-the-badge&color=080075" alt="Profile Views" />
+</p>
