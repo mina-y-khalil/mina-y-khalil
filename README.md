@@ -68,7 +68,7 @@ Check out my [portfolio](https://mina-y-khalil.github.io/mina-y-khalil/) for cli
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=mina-y-khalil&layout=compact&theme=midnight-purple&hide_border=true&title_color=9D95FF&langs_count=10" alt="Top Languages"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=mina-y-khalil&layout=compact&theme=midnight-purple&hide_border=true&title_color=9D95FF&langs_count=10&hide=objective-c,makefile,c%2B%2B,cmake,c" alt="Top Languages"/>
 </p>
 
 ## Connect
