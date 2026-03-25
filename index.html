@@ -73,9 +73,25 @@
     }
     a { color: var(--accent); text-decoration: none; transition: color var(--transition-base); }
     a:hover { color: var(--accent-bright); }
+
+    /* Yellow highlighter text selection */
+    ::selection { background: #ffe066; color: #1a1a2e; }
+    ::-moz-selection { background: #ffe066; color: #1a1a2e; }
+
     img { max-width: 100%; height: auto; display: block; }
     h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; line-height: 1.2; }
     .container { max-width: var(--container-max); margin: 0 auto; padding: 0 24px; }
+
+    /* Modal signature */
+    .modal-signature {
+      display: block;
+      margin-top: 14px;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--accent);
+      letter-spacing: 0.5px;
+    }
 
     /* ================================================================
        Section headers
@@ -1341,9 +1357,11 @@
         if (!ok) p.setAttribute('loop', '');
         modalLottie.appendChild(p);
         modalTitle.textContent = ok ? 'Thanks for reaching out!' : 'Something Went Wrong';
-        modalMsg.textContent = ok
-          ? "I appreciate you taking the time to write. I'll get back to you as soon as I can.\n— Mina Khalil"
-          : 'Your message could not be sent at this time. Please try again or email me directly at mina.y.khalil90@gmail.com';
+        if (ok) {
+          modalMsg.innerHTML = "I appreciate you taking the time to write. I'll get back to you as soon as I can.<br><span class=\"modal-signature\">— Mina Khalil</span>";
+        } else {
+          modalMsg.textContent = 'Your message could not be sent at this time. Please try again or email me directly at mina.y.khalil90@gmail.com';
+        }
         formModal.classList.add('active');
       }
       function hideModal() { formModal.classList.remove('active'); }
