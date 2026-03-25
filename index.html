@@ -1,1235 +1,1370 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Mina Khalil - Full-Stack Software Engineer</title>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <meta
-      content="Portfolio of Mina Khalil — Full-Stack Software Engineer"
-      name="description"
-    />
-    <meta
-      content="Mina Khalil, Full-Stack, Software Engineer, React, Redux, Flask, SQLAlchemy, Portfolio, Python Developer, React Developer, AI Learner"
-      name="keywords"
-    />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mina Khalil — Full-Stack Software Engineer</title>
+  <meta name="description" content="Portfolio of Mina Khalil — Full-Stack Software Engineer specializing in React, Flask, Python, and scalable web applications." />
+  <meta name="keywords" content="Mina Khalil, Full-Stack, Software Engineer, React, Redux, Flask, SQLAlchemy, Portfolio, Python Developer" />
 
-    <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon" />
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+  <!-- Favicon -->
+  <link href="assets/img/favicon.png" rel="icon" />
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Raleway:wght@300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Google Fonts: Sora (display) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
 
-    <!-- Vendor CSS Files -->
-    <link
-      href="assets/vendor/bootstrap/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
-    <link
-      href="assets/vendor/glightbox/css/glightbox.min.css"
-      rel="stylesheet"
-    />
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons (CDN) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
 
-    <!-- Main CSS File -->
-    <link href="assets/css/main.css" rel="stylesheet" />
-  </head>
+  <!-- Lottie Player (CDN) -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
-  <body class="index-page">
-    <header id="header" class="header dark-background d-flex flex-column">
-      <i
-        class="header-toggle d-xl-none bi bi-list"
-        aria-label="Toggle navigation"
-      ></i>
+  <!-- ────────────────────────────────────────────────====
+       Styles
+       ================================================================ -->
+  <style>
+    /* ================================================================
+       CSS CUSTOM PROPERTIES
+       ────────────────────────────────────────── */
+    :root {
+      --primary: #080075;
+      --primary-light: #2d2aaa;
+      --primary-dark: #050050;
+      --primary-glow: rgba(8, 0, 117, 0.3);
 
-      <div class="profile-img">
-        <img
-          src="https://redeem-innovations.com/wp-content/uploads/2025/08/mina-pp-1.jpg"
-          alt="Profile photo of Mina Khalil"
-          class="img-fluid rounded-circle"
-        />
+      --accent: #9d95ff;
+      --accent-bright: #b8b2ff;
+      --accent-soft: rgba(157, 149, 255, 0.15);
+
+      --bg-dark: #0a0a1a;
+      --bg-card: #111128;
+      --bg-light: #f5f5fa;
+      --bg-white: #ffffff;
+      --text-primary: #e8e8f0;
+      --text-secondary: #a0a0c0;
+      --text-dark: #1a1a2e;
+      --text-muted: #6b6b8d;
+      --border-subtle: rgba(255, 255, 255, 0.06);
+
+      --font-display: 'Sora', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+
+      --section-padding: 100px 0;
+      --container-max: 1140px;
+
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-base: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* ================================================================
+       Reset
+       ────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      color: var(--text-primary);
+      background: var(--bg-dark);
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); text-decoration: none; transition: color var(--transition-base); }
+    a:hover { color: var(--accent-bright); }
+    img { max-width: 100%; height: auto; display: block; }
+    h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; line-height: 1.2; }
+    .container { max-width: var(--container-max); margin: 0 auto; padding: 0 24px; }
+
+    /* ================================================================
+       Section headers
+       ────────────────────────────────────────── */
+    .section { padding: var(--section-padding); position: relative; }
+    .section-light { background: var(--bg-light); color: var(--text-dark); }
+
+    .section-header { text-align: center; margin-bottom: 64px; }
+    .section-header .label {
+      display: inline-block; font-family: var(--font-display);
+      font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 16px; position: relative;
+    }
+    .section-header .label::before, .section-header .label::after {
+      content: ''; position: absolute; top: 50%;
+      width: 32px; height: 1px; background: var(--accent); opacity: 0.4;
+    }
+    .section-header .label::before { right: calc(100% + 12px); }
+    .section-header .label::after { left: calc(100% + 12px); }
+    .section-header h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 16px; }
+    .section-header p { font-size: 1.05rem; max-width: 600px; margin: 0 auto; opacity: 0.75; line-height: 1.8; }
+    .section-light .section-header h2 { color: var(--primary); }
+    .section-light .section-header p { color: var(--text-muted); }
+
+    /* ================================================================
+       Sidebar
+       ────────────────────────────────────────── */
+    #sidebar {
+      position: fixed; top: 0; left: 0;
+      width: 280px; height: 100vh;
+      background: linear-gradient(180deg, var(--primary-dark) 0%, var(--bg-dark) 100%);
+      border-right: 1px solid var(--border-subtle);
+      z-index: 1000;
+      display: flex; flex-direction: column; align-items: center;
+      padding: 32px 20px 24px;
+      transition: transform 0.4s var(--ease-out);
+      overflow-y: auto;
+    }
+
+    .sidebar-profile {
+      width: 110px; height: 110px; border-radius: 50%; overflow: hidden;
+      border: 3px solid var(--accent);
+      box-shadow: 0 0 30px var(--primary-glow);
+      margin-bottom: 14px; flex-shrink: 0;
+    }
+    .sidebar-profile img { width: 100%; height: 100%; object-fit: cover; }
+
+    .sidebar-name {
+      font-family: var(--font-display);
+      font-size: 1.15rem; font-weight: 700;
+      color: #fff; margin-bottom: 16px;
+    }
+
+    .sidebar-social { display: flex; gap: 8px; margin-bottom: 12px; flex-shrink: 0; }
+    .sidebar-social a { display: flex; align-items: center; justify-content: center; }
+
+    /* Print & Save PDF buttons */
+    .sidebar-actions {
+      display: flex; gap: 8px; margin-bottom: 20px; flex-shrink: 0;
+    }
+    .sidebar-actions button {
+      display: flex; align-items: center; gap: 6px;
+      padding: 8px 14px; border-radius: 8px;
+      font-family: var(--font-display);
+      font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.3px;
+      cursor: pointer; border: 1.5px solid rgba(157, 149, 255, 0.25);
+      background: rgba(157, 149, 255, 0.08);
+      color: var(--accent); transition: all var(--transition-base);
+    }
+    .sidebar-actions button:hover {
+      background: rgba(157, 149, 255, 0.18);
+      border-color: var(--accent);
+    }
+    .sidebar-actions button i { font-size: 0.85rem; }
+
+    .sidebar-nav { list-style: none; width: 100%; flex: 1; }
+    .sidebar-nav li { margin-bottom: 4px; }
+    .sidebar-nav a {
+      display: flex; align-items: center; gap: 12px;
+      padding: 11px 20px; border-radius: 10px;
+      color: var(--text-secondary); font-family: var(--font-display);
+      font-size: 0.83rem; font-weight: 500; letter-spacing: 0.5px;
+      transition: all var(--transition-base);
+    }
+    .sidebar-nav a:hover, .sidebar-nav a.active { color: #fff; background: rgba(157, 149, 255, 0.1); }
+    .sidebar-nav a.active { background: rgba(157, 149, 255, 0.14); box-shadow: inset 3px 0 0 var(--accent); }
+    .sidebar-nav a i { font-size: 1.1rem; width: 20px; text-align: center; }
+
+    .sidebar-toggle {
+      display: none; position: fixed; top: 16px; left: 16px; z-index: 1100;
+      width: 44px; height: 44px; border-radius: 10px;
+      border: 1px solid var(--border-subtle); background: var(--bg-dark);
+      color: #fff; font-size: 1.3rem; cursor: pointer;
+      align-items: center; justify-content: center;
+    }
+
+    .main-content { margin-left: 280px; }
+
+    /* ================================================================
+       Hero
+       ────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--bg-dark) 60%, #0d0d30 100%);
+    }
+    #hero::before {
+      content: ''; position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(157,149,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(157,149,255,0.04) 1px, transparent 1px);
+      background-size: 60px 60px; animation: gridShift 20s linear infinite;
+    }
+    @keyframes gridShift { 0%{transform:translate(0,0)} 100%{transform:translate(60px,60px)} }
+
+    #hero::after {
+      content: ''; position: absolute; top: 20%; right: -10%;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+      border-radius: 50%; filter: blur(80px); animation: orbFloat 8s ease-in-out infinite;
+    }
+    @keyframes orbFloat { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-40px,30px) scale(1.1)} }
+
+    .hero-content { position: relative; z-index: 2; text-align: center; padding: 0 24px; }
+    .hero-greeting {
+      font-family: var(--font-display); font-size: 0.85rem; font-weight: 600;
+      letter-spacing: 4px; text-transform: uppercase; color: var(--accent);
+      margin-bottom: 20px; opacity: 0; animation: fadeUp .8s var(--ease-out) .2s forwards;
+    }
+    .hero-title {
+      font-size: clamp(2.5rem,6vw,4.5rem); font-weight: 800; color: #fff;
+      margin-bottom: 20px; opacity: 0; animation: fadeUp .8s var(--ease-out) .4s forwards;
+    }
+    .hero-title .highlight {
+      background: linear-gradient(135deg, var(--accent), var(--primary-light));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .hero-subtitle {
+      font-size: clamp(1rem,2vw,1.25rem); color: var(--text-secondary);
+      max-width: 650px; margin: 0 auto 36px; line-height: 1.8;
+      opacity: 0; animation: fadeUp .8s var(--ease-out) .6s forwards;
+    }
+    .hero-typed-wrap {
+      font-family: var(--font-display); font-size: clamp(1.1rem,2.2vw,1.4rem);
+      font-weight: 500; color: var(--accent); margin-bottom: 40px; min-height: 2em;
+      opacity: 0; animation: fadeUp .8s var(--ease-out) .7s forwards;
+    }
+    .typed-cursor { color: var(--accent); font-weight: 100; animation: blink .7s infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+    .hero-cta {
+      display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+      opacity: 0; animation: fadeUp .8s var(--ease-out) .8s forwards;
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px; border-radius: 50px; font-family: var(--font-display);
+      font-size: 0.9rem; font-weight: 600; letter-spacing: 0.5px;
+      cursor: pointer; border: none; transition: all var(--transition-base);
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary-light), var(--primary));
+      color: #fff; box-shadow: 0 4px 20px var(--primary-glow);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(8,0,117,0.5); color: #fff; }
+    .btn-outline { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.2); }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+
+    /* ================================================================
+       About
+       ────────────────────────────────────────── */
+    .about-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px; align-items: center; }
+    .about-visual { display: flex; justify-content: center; }
+    .about-text h3 { font-size: 1.6rem; color: #fff; margin-bottom: 8px; }
+    .about-text .role-line { font-size: 1rem; color: var(--accent); font-weight: 500; margin-bottom: 20px; }
+    .about-text p { color: var(--text-secondary); margin-bottom: 24px; line-height: 1.8; }
+
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+    .info-item { display: flex; gap: 8px; align-items: flex-start; }
+    .info-item .info-icon { color: var(--accent); font-size: 0.75rem; margin-top: 6px; flex-shrink: 0; }
+    .info-item strong { color: #fff; font-weight: 600; display: block; font-size: 0.85rem; margin-bottom: 2px; }
+    .info-item span { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5; }
+    .info-item a { color: var(--accent); }
+
+    /* ================================================================
+       Award banner
+       ────────────────────────────────────────── */
+    .award-banner {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      padding: 48px 0; text-align: center; position: relative; overflow: hidden;
+    }
+    .award-banner::before {
+      content: ''; position: absolute; inset: 0;
+      background: repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255,255,255,0.015) 20px, rgba(255,255,255,0.015) 40px);
+    }
+    .award-content { position: relative; z-index: 2; display: flex; align-items: center; justify-content: center; gap: 32px; flex-wrap: wrap; }
+    .award-icon { font-size: 2.5rem; color: #ffd700; }
+    .award-text h4 { font-size: 1.1rem; color: #fff; margin-bottom: 4px; }
+    .award-text p { color: var(--text-secondary); font-size: 0.9rem; }
+
+    /* ================================================================
+       Tech stack
+       ────────────────────────────────────────── */
+    .tech-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 900px; margin: 0 auto; }
+    .tech-grid img { border-radius: 8px; transition: all .35s var(--ease-out); filter: saturate(0.9); }
+    .tech-grid img:hover { transform: translateY(-4px) scale(1.08); filter: saturate(1.2); box-shadow: 0 8px 24px rgba(8,0,117,0.2); }
+
+    /* ================================================================
+       RESUME
+       ────────────────────────────────────────── */
+    /* Resume accordion stack */
+    .resume-accordions { max-width: 800px; margin: 0 auto; }
+    .resume-accordion { margin-bottom: 12px; }
+    .resume-accordion .accordion-toggle {
+      padding: 16px 24px; border-radius: 14px; font-size: 0.9rem;
+    }
+    .resume-accordion .accordion-toggle i:first-child { font-size: 1rem; }
+    .resume-entry {
+      position: relative; padding: 24px; background: var(--bg-card);
+      border-radius: 12px; border: 1px solid var(--border-subtle);
+      margin-bottom: 20px; transition: border-color var(--transition-base);
+    }
+    .resume-entry:hover { border-color: rgba(157,149,255,0.2); }
+    .resume-entry h4 { font-size: 1rem; color: #fff; margin-bottom: 4px; }
+    .resume-entry .date { font-size: 0.8rem; font-weight: 600; color: var(--accent); margin-bottom: 4px; }
+    .resume-entry .location { font-size: 0.85rem; color: var(--text-muted); font-style: italic; margin-bottom: 12px; }
+    .resume-entry ul { list-style: none; padding: 0; }
+    .resume-entry ul li {
+      position: relative; padding-left: 18px; margin-bottom: 8px;
+      font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;
+    }
+    .resume-entry ul li::before {
+      content: ''; position: absolute; left: 0; top: 10px;
+      width: 6px; height: 6px; border-radius: 50%; background: var(--accent); opacity: 0.6;
+    }
+    .resume-entry a { color: var(--accent); font-size: 0.85rem; }
+
+    .resume-summary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      border: 1px solid rgba(157,149,255,0.1);
+    }
+    .resume-summary h4 { font-size: 1.2rem; margin-bottom: 8px; }
+    .resume-summary p { color: var(--text-secondary); font-style: italic; margin-bottom: 16px; line-height: 1.7; }
+
+    /* Summary card icon links */
+    .summary-links { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .summary-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 14px; border-radius: 50px;
+      font-size: 0.78rem; font-weight: 600;
+      color: #fff; background: rgba(157,149,255,0.15);
+      border: 1px solid rgba(157,149,255,0.25);
+      transition: all var(--transition-base);
+    }
+    .summary-link:hover { background: rgba(157,149,255,0.3); color: #fff; border-color: var(--accent); }
+    .summary-link i { font-size: 0.9rem; }
+
+    .summary-location {
+      display: flex; align-items: center; gap: 8px;
+      color: var(--text-secondary); font-size: 0.9rem;
+    }
+
+    /* Share toast notification */
+    .share-toast {
+      position: fixed; bottom: 80px; right: 24px; z-index: 9999;
+      padding: 12px 24px; border-radius: 12px;
+      background: var(--primary); color: #fff;
+      font-family: var(--font-display); font-size: 0.85rem; font-weight: 600;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      opacity: 0; transform: translateY(12px);
+      transition: all 0.3s var(--ease-out);
+      pointer-events: none;
+    }
+    .share-toast.show { opacity: 1; transform: translateY(0); }
+
+    /* ================================================================
+       PROJECTS
+       ────────────────────────────────────────── */
+    .portfolio-filters {
+      display: flex; justify-content: center; gap: 8px;
+      margin-bottom: 40px; list-style: none; flex-wrap: wrap;
+    }
+    .portfolio-filters li {
+      padding: 10px 24px; border-radius: 50px; font-family: var(--font-display);
+      font-size: 0.8rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+      cursor: pointer; color: var(--text-muted); background: rgba(8,0,117,0.06);
+      border: 1.5px solid transparent; transition: all var(--transition-base);
+    }
+    .portfolio-filters li:hover, .portfolio-filters li.filter-active {
+      color: var(--primary); border-color: var(--primary); background: rgba(8,0,117,0.08);
+    }
+
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+    .project-card {
+      background: #fff; border-radius: 16px; overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.06); transition: all .4s var(--ease-out); position: relative;
+    }
+    .project-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(8,0,117,0.12); }
+    .project-card-img { width: 100%; aspect-ratio: 1/1; object-fit: contain; padding: 24px; background: #f8f8fc; border-bottom: 1px solid rgba(0,0,0,0.04); }
+    .project-card-body { padding: 24px; }
+    .project-card-body h4 { font-size: 1.05rem; color: var(--primary); margin-bottom: 8px; }
+    .project-card-body p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px; }
+    .project-links { display: flex; gap: 12px; }
+    .project-links a {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.8rem; font-weight: 600; color: var(--primary);
+      padding: 6px 14px; border-radius: 50px; border: 1.5px solid var(--primary);
+      transition: all var(--transition-base);
+    }
+    .project-links a:hover { background: var(--primary); color: #fff; }
+    .project-tag {
+      position: absolute; top: 12px; right: 12px; padding: 4px 12px; border-radius: 50px;
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase;
+      background: rgba(8,0,117,0.9); color: #fff; backdrop-filter: blur(8px); z-index: 2;
+    }
+
+    /* ================================================================
+       CONTACT
+       ────────────────────────────────────────── */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 48px; }
+    .contact-info { display: flex; flex-direction: column; gap: 20px; }
+    .contact-card {
+      display: flex; align-items: center; gap: 16px; padding: 20px;
+      background: var(--bg-card); border-radius: 12px; border: 1px solid var(--border-subtle);
+      transition: border-color var(--transition-base);
+    }
+    .contact-card:hover { border-color: rgba(157,149,255,0.2); }
+    .contact-card .c-icon { flex-shrink: 0; }
+    .contact-card h4 { font-size: 0.85rem; color: var(--accent); margin-bottom: 2px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+    .contact-card p, .contact-card a { font-size: 0.9rem; color: var(--text-secondary); }
+
+    .contact-form { display: flex; flex-direction: column; gap: 16px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 6px; letter-spacing: 0.5px; text-transform: uppercase; font-family: var(--font-display); }
+    .form-group input, .form-group textarea {
+      width: 100%; padding: 14px 18px; border-radius: 10px;
+      border: 1.5px solid var(--border-subtle); background: var(--bg-card);
+      color: var(--text-primary); font-family: var(--font-body); font-size: 0.95rem;
+      transition: border-color var(--transition-base); outline: none;
+    }
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+    .form-group textarea { resize: vertical; min-height: 140px; }
+    .contact-form .btn-primary { align-self: flex-start; padding: 14px 40px; }
+    .contact-form.sending .btn-primary { opacity: 0.6; pointer-events: none; }
+
+    /* ================================================================
+       Form confirmation modal
+       ────────────────────────────────────────── */
+    .modal-overlay {
+      position: fixed; inset: 0; z-index: 9999;
+      background: rgba(0,0,0,0.7); backdrop-filter: blur(6px);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none; transition: opacity .3s ease;
+    }
+    .modal-overlay.active { opacity: 1; pointer-events: auto; }
+    .modal-box {
+      background: var(--bg-card); border: 1px solid var(--border-subtle);
+      border-radius: 20px; padding: 40px 48px; text-align: center;
+      max-width: 420px; width: 90%; transform: scale(0.9);
+      transition: transform .3s var(--ease-out);
+    }
+    .modal-overlay.active .modal-box { transform: scale(1); }
+    .modal-box h3 { font-size: 1.3rem; color: #fff; margin-bottom: 8px; }
+    .modal-box p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px; }
+    .modal-close {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 32px; border-radius: 50px; font-family: var(--font-display);
+      font-size: 0.85rem; font-weight: 600; cursor: pointer; border: none;
+      background: var(--primary); color: #fff; transition: all var(--transition-base);
+    }
+    .modal-close:hover { background: var(--primary-light); transform: translateY(-2px); }
+
+    /* ================================================================
+       Footer
+       ────────────────────────────────────────── */
+    #footer {
+      text-align: center; padding: 36px 0;
+      background: var(--primary-dark); border-top: 1px solid var(--border-subtle);
+    }
+    .footer-tagline {
+      font-family: var(--font-display); font-size: 0.95rem; font-weight: 600;
+      color: rgba(255,255,255,0.6);
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+
+    /* ================================================================
+       Scroll-to-top button
+       ────────────────────────────────────────── */
+    .scroll-top {
+      position: fixed; bottom: 24px; right: 24px;
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--primary); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; opacity: 0; pointer-events: none;
+      transition: all var(--transition-base);
+      z-index: 999; cursor: pointer;
+      border: 2.5px solid #fff;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    }
+    .scroll-top.visible { opacity: 1; pointer-events: auto; }
+    .scroll-top:hover { background: var(--primary-light); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+
+    /* ================================================================
+       Preloader
+       ────────────────────────────────────────── */
+    #preloader {
+      position: fixed; inset: 0; z-index: 9999; background: var(--bg-dark);
+      display: flex; align-items: center; justify-content: center;
+      transition: opacity .5s ease;
+    }
+    #preloader.loaded { opacity: 0; pointer-events: none; }
+
+    /* ================================================================
+       Accordion
+       ────────────────────────────────────────── */
+    .accordion { margin-bottom: 20px; }
+    .accordion-toggle {
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 20px; border-radius: 12px;
+      background: var(--bg-card); border: 1px solid var(--border-subtle);
+      color: var(--accent); font-family: var(--font-display);
+      font-size: 0.85rem; font-weight: 600; cursor: pointer;
+      transition: all var(--transition-base);
+    }
+    .accordion-toggle:hover { border-color: rgba(157,149,255,0.25); background: rgba(157,149,255,0.06); }
+    .accordion-toggle span { display: flex; align-items: center; gap: 8px; }
+    .accordion-arrow { transition: transform 0.3s var(--ease-out); font-size: 0.9rem; }
+    .accordion-toggle[aria-expanded="true"] .accordion-arrow { transform: rotate(180deg); }
+    .accordion-body {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.4s var(--ease-out);
+      padding-top: 0;
+    }
+    .accordion-body.open { max-height: 2000px; padding-top: 16px; }
+
+    /* Light section accordion overrides */
+    .section-light .accordion-toggle { background: #fff; border-color: rgba(0,0,0,0.08); color: var(--primary); }
+    .section-light .accordion-toggle:hover { border-color: var(--primary); }
+
+    /* ================================================================
+       Scroll animations
+       ────────────────────────────────────────── */
+    [data-aos] { opacity: 0; transition-property: opacity, transform; transition-duration: .8s; transition-timing-function: cubic-bezier(.16,1,.3,1); }
+    [data-aos].aos-animate { opacity: 1; transform: none; }
+    [data-aos="fade-up"] { transform: translateY(40px); }
+    [data-aos="fade-up"].aos-animate { transform: translateY(0); }
+    [data-aos-delay="100"] { transition-delay: .1s; }
+    [data-aos-delay="200"] { transition-delay: .2s; }
+    [data-aos-delay="300"] { transition-delay: .3s; }
+
+    /* Print layout */
+    @media print {
+      #sidebar, .sidebar-toggle, .sidebar-overlay,
+      #hero, #skills, #contact, #footer, #about,
+      .scroll-top, .modal-overlay, #preloader, .share-toast,
+      .award-banner, .section-header .label,
+      .portfolio-filters, .project-tag,
+      lottie-player, [data-aos] { opacity: 1 !important; transform: none !important; }
+
+      #sidebar, .sidebar-toggle, .sidebar-overlay,
+      #hero, #skills, #contact, #footer, #about,
+      .scroll-top, .modal-overlay, #preloader, .share-toast,
+      .award-banner, .portfolio-filters, .project-tag,
+      lottie-player { display: none !important; }
+
+      body { background: #fff !important; color: #1a1a2e !important; font-size: 10pt; line-height: 1.4; }
+      .main-content { margin-left: 0 !important; }
+      .section { padding: 12px 0 !important; }
+      .container { max-width: 100% !important; padding: 0 20px !important; }
+
+      .print-header { display: block !important; padding: 14px 20px; margin-bottom: 8px; border-bottom: 3px solid #080075; }
+      .print-header-row { display: flex !important; align-items: center; justify-content: space-between; }
+      .print-header-text { text-align: left; flex: 1; }
+      .print-header h1 { font-size: 22pt; color: #080075; margin-bottom: 2px; }
+      .print-header p { font-size: 9pt; color: #444; margin: 0; }
+      .print-header .print-links { font-size: 8pt; color: #555; margin-top: 3px; }
+      .print-header .print-links a { color: #080075; text-decoration: underline; }
+      .print-qr { text-align: center; flex-shrink: 0; margin-left: 14px; }
+      .print-qr img { width: 68px; height: 68px; display: block; margin: 0 auto 2px; }
+      .print-qr span { font-size: 6pt; color: #888; }
+
+      .section-header { margin-bottom: 10px !important; }
+      .section-header h2 { color: #080075 !important; font-size: 14pt !important; margin-bottom: 3px !important; }
+      .section-header p { color: #444 !important; font-size: 8pt !important; }
+      .section-header .label { display: none !important; }
+
+      /* Resume — single column, all accordions open */
+      .resume-accordions { max-width: 100% !important; }
+      .resume-accordion { margin-bottom: 4px !important; }
+
+
+      .resume-entry { background: #fff !important; border: 1px solid #ddd !important; padding: 8px 10px !important; margin-bottom: 5px !important; page-break-inside: avoid; border-radius: 3px !important; }
+      .resume-entry h4 { color: #1a1a2e !important; font-size: 9pt !important; margin-bottom: 1px !important; }
+      .resume-entry .date { color: #080075 !important; font-size: 7pt !important; }
+      .resume-entry .location { color: #666 !important; font-size: 7pt !important; margin-bottom: 3px !important; }
+      .resume-entry ul li { color: #333 !important; font-size: 8pt !important; padding-left: 12px !important; margin-bottom: 1px !important; line-height: 1.35 !important; }
+      .resume-entry ul li::before { background: #080075 !important; width: 4px !important; height: 4px !important; top: 6px !important; }
+      .resume-entry a { color: #080075 !important; text-decoration: underline !important; }
+
+      .resume-summary { background: #f5f5ff !important; border: 1.5px solid #080075 !important; }
+      .resume-summary h4 { color: #080075 !important; font-size: 11pt !important; }
+      .resume-summary p { color: #444 !important; font-size: 8pt !important; }
+      .summary-links { display: none !important; }
+      .summary-location { display: none !important; }
+      .summary-print-links { display: block !important; margin-top: 4px; }
+      .summary-print-links p { font-size: 7.5pt !important; color: #333 !important; margin: 1px 0 !important; }
+      .summary-print-links a { color: #080075 !important; text-decoration: underline !important; }
+
+      .accordion-toggle { display: none !important; }
+      .accordion-body { max-height: none !important; padding-top: 0 !important; overflow: visible !important; }
+
+      #portfolio { display: block !important; background: #fff !important; padding: 8px 0 !important; }
+      .projects-grid { display: block !important; }
+      .project-card { display: flex !important; align-items: center !important; border: 1px solid #ddd !important; border-radius: 3px !important; margin-bottom: 5px !important; padding: 7px 10px !important; background: #fff !important; page-break-inside: avoid; box-shadow: none !important; transform: none !important; }
+      .project-card-img { display: none !important; }
+      .project-card-body { flex: 1 !important; padding: 0 !important; }
+      .project-card-body h4 { color: #080075 !important; font-size: 9pt !important; margin-bottom: 1px !important; }
+      .project-card-body p { font-size: 7.5pt !important; color: #444 !important; margin-bottom: 1px !important; }
+      .project-links a { font-size: 7pt !important; color: #080075 !important; border: none !important; padding: 0 !important; text-decoration: underline !important; border-radius: 0 !important; }
+      .project-links a i { display: none !important; }
+      .project-qr { display: block !important; flex-shrink: 0; margin-left: 8px; text-align: center; }
+      .project-qr img { width: 46px; height: 46px; }
+      .project-qr span { font-size: 5pt; color: #888; display: block; margin-top: 1px; }
+
+      /* Credential QR codes — replace text links in print */
+      .credential-link { display: none !important; }
+      .credential-qr {
+        display: inline-flex !important; align-items: center; gap: 6px; margin-top: 4px;
+      }
+      .credential-qr a { display: inline-block; }
+      .credential-qr img { width: 44px; height: 44px; }
+      .credential-qr span { font-size: 5.5pt; color: #888; }
+    }
+
+    .print-header { display: none; }
+    .summary-print-links { display: none; }
+    .project-qr { display: none; }
+    .credential-qr { display: none; }
+
+    /* ================================================================
+       Responsive breakpoints
+       ────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      #sidebar { transform: translateX(-100%); }
+      #sidebar.open { transform: translateX(0); }
+      .sidebar-toggle { display: flex; }
+      .main-content { margin-left: 0; }
+      .sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 999; }
+      .sidebar-overlay.active { display: block; }
+    }
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-visual { order: -1; }
+      .info-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .hero-title { font-size: clamp(2rem,8vw,3rem); }
+      .award-content { flex-direction: column; gap: 16px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ────────────────────────────────────────────────
+       Preloader
+       ──────────────────────────────────────────────── -->
+  <div id="preloader">
+    <div style="text-align:center;">
+      <lottie-player src="assets/animations/Rocket.json" background="transparent" speed="1" style="width:120px;height:120px;margin:0 auto;" loop autoplay></lottie-player>
+      <p style="font-family:'Sora',sans-serif;font-size:1.1rem;font-weight:700;color:#fff;letter-spacing:3px;margin-top:16px;">MINA KHALIL</p>
+      <p style="font-family:'DM Sans',sans-serif;font-size:0.75rem;color:rgba(157,149,255,0.7);letter-spacing:1px;margin-top:4px;">Loading portfolio...</p>
+    </div>
+  </div>
+
+  <!-- Print-only header with contact info and QR code -->
+  <div class="print-header">
+    <div class="print-header-row">
+      <div class="print-header-text">
+        <h1>Mina Khalil</h1>
+        <p>Full-Stack Software Engineer &amp; Accounting Data Analyst</p>
+        <p class="print-links">
+          <a href="mailto:mina.y.khalil90@gmail.com">mina.y.khalil90@gmail.com</a> &nbsp;|&nbsp;
+          925-725-9295 &nbsp;|&nbsp;
+          <a href="https://linkedin.com/in/mina-y-khalil">LinkedIn</a> &nbsp;|&nbsp;
+          <a href="https://github.com/mina-y-khalil">GitHub</a> &nbsp;|&nbsp;
+          San Francisco Bay Area, CA
+        </p>
       </div>
+      <div class="print-qr">
+        <img id="printQR" alt="Portfolio QR" />
+        <span>Scan for portfolio</span>
+      </div>
+    </div>
+  </div>
 
-      <a
-        href="index.html"
-        class="logo d-flex align-items-center justify-content-center"
-      >
-        <h1 class="sitename">Mina Khalil</h1>
+  <!-- Toast popup when user copies portfolio link -->
+  <div class="share-toast" id="shareToast"><i class="bi bi-check-circle"></i> Portfolio link copied!</div>
+
+  <!-- ────────────────────────────────────────────────
+       MOBILE SIDEBAR OVERLAY
+       ──────────────────────────────────────────────── -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- ────────────────────────────────────────────────
+       MOBILE TOGGLE BUTTON
+       ──────────────────────────────────────────────── -->
+  <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle navigation">
+    <i class="bi bi-list"></i>
+  </button>
+
+  <!-- ────────────────────────────────────────────────
+       Sidebar
+       ──────────────────────────────────────────────── -->
+  <header id="sidebar">
+    <div class="sidebar-profile">
+      <img src="https://redeem-innovations.com/wp-content/uploads/2025/08/mina-pp-1.jpg" alt="Mina Khalil" />
+    </div>
+    <div class="sidebar-name">Mina Khalil</div>
+
+    <!-- Gmail, LinkedIn, GitHub -->
+    <div class="sidebar-social">
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mina.y.khalil90@gmail.com&su=Hi%20Mina&body=Hi%20Mina%2C" target="_blank" rel="noopener" title="Email">
+        <lottie-player src="assets/animations/Gmail.json" background="transparent" speed="1" style="width:40px;height:40px" loop autoplay></lottie-player>
       </a>
+      <a href="https://linkedin.com/in/mina-y-khalil" target="_blank" rel="noopener" title="LinkedIn">
+        <lottie-player src="assets/animations/Linkedin.json" background="transparent" speed="1" style="width:40px;height:40px" loop autoplay></lottie-player>
+      </a>
+      <a href="https://github.com/mina-y-khalil" target="_blank" rel="noopener" title="GitHub">
+        <lottie-player src="assets/animations/Github.json" background="transparent" speed="1" style="width:40px;height:40px" loop autoplay></lottie-player>
+      </a>
+    </div>
 
- <!-- remove any stray closing </a> before this block -->
+    <!-- Resume actions -->
+    <div class="sidebar-actions">
+      <button id="printBtn" title="Print resume"><i class="bi bi-printer"></i> Print</button>
+      <button id="savePdfBtn" title="Save as PDF"><i class="bi bi-file-earmark-pdf"></i> PDF</button>
+      <button id="shareBtn" title="Share portfolio"><i class="bi bi-share"></i> Share</button>
+    </div>
 
-<!-- remove any stray closing </a> before this block -->
+    <!-- Navigation -->
+    <ul class="sidebar-nav">
+      <li><a href="#hero" class="active"><i class="bi bi-house"></i> Home</a></li>
+      <li><a href="#about"><i class="bi bi-person"></i> About</a></li>
+      <li><a href="#skills"><i class="bi bi-lightning-charge"></i> Tech Stack</a></li>
+      <li><a href="#resume"><i class="bi bi-file-earmark-text"></i> Resume</a></li>
+      <li><a href="#portfolio"><i class="bi bi-images"></i> Projects</a></li>
+      <li><a href="#contact"><i class="bi bi-envelope"></i> Contact</a></li>
+    </ul>
+  </header>
 
-<div class="social-links text-center">
-  <a
-    href="https://mail.google.com/mail/?view=cm&fs=1&to=mina.y.khalil90@gmail.com&su=Hi%20Mina&body=Hi%20Mina%2C"
-    class="gmail"
-    title="Compose in Gmail"
-    target="_blank"
-    rel="noopener"
-  >
-    <lottie-player
-      src="assets/animations/Gmail.json"
-      background="transparent"
-      speed="1"
-      style="width: 48px; height: 48px"
-      loop
-      autoplay
-    ></lottie-player>
-  </a>
-  <a
-    href="https://linkedin.com/in/mina-y-khalil"
-    class="linkedin"
-    target="_blank"
-    rel="noopener"
-    title="LinkedIn"
-  >
-    <lottie-player
-      src="assets/animations/Linkedin.json"
-      background="transparent"
-      speed="1"
-      style="width: 48px; height: 48px"
-      loop
-      autoplay
-    ></lottie-player>
-  </a>
-  <a
-    href="https://github.com/mina-y-khalil"
-    class="github"
-    target="_blank"
-    rel="noopener"
-    title="GitHub"
-  >
-    <lottie-player
-      src="assets/animations/Github.json"
-      background="transparent"
-      speed="1"
-      style="width: 48px; height: 48px"
-      loop
-      autoplay
-    ></lottie-player>
-  </a>
-</div>
+  <!-- ────────────────────────────────────────────────
+       Form confirmation modal
+       ──────────────────────────────────────────────── -->
+  <div class="modal-overlay" id="formModal">
+    <div class="modal-box">
+      <div id="modalLottie" style="width:120px;height:120px;margin:0 auto 16px;"></div>
+      <h3 id="modalTitle"></h3>
+      <p id="modalMsg"></p>
+      <button class="modal-close" id="modalClose">Got it</button>
+    </div>
+  </div>
 
+  <!-- ────────────────────────────────────────────────
+       MAIN CONTENT
+       ──────────────────────────────────────────────── -->
+  <div class="main-content">
 
-      <nav id="navmenu" class="navmenu" aria-label="Primary">
-        <ul>
-          <li>
-            <a href="#hero" class="active"
-              ><i class="bi bi-house navicon"></i>Home</a
-            >
-          </li>
-          <li>
-            <a href="#about"><i class="bi bi-person navicon"></i> About</a>
-          </li>
-          <li>
-            <a href="#skills"
-              ><i class="bi bi-lightning-charge navicon"></i> Tech Stack</a
-            >
-          </li>
-          <li>
-            <a href="#resume"
-              ><i class="bi bi-file-earmark-text navicon"></i> Resume</a
-            >
-          </li>
-          <li>
-            <a href="#portfolio"
-              ><i class="bi bi-images navicon"></i> Projects</a
-            >
-          </li>
-          <li>
-            <a href="#contact"
-              ><i class="bi bi-envelope navicon"></i> Contact</a
-            >
-          </li>
-        </ul>
-      </nav>
-    </header>
-
-    <main class="main">
-      <!-- Hero Section -->
-      <section id="hero" class="hero section dark-background">
-        <img
-          src="https://redeem-innovations.com/wp-content/uploads/2025/10/coding-bg4.png"
-          alt=""
-          data-aos="fade-in"
-        />
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <h2>Mina Khalil</h2>
-          <p>
-            I’m
-            <span
-              class="typed"
-              data-typed-items="a Full-Stack Software Engineer, a Python Developer, a React Developer, an AI Learner"
-              >Full-Stack Software Engineer</span
-            >
-            <span
-              class="typed-cursor typed-cursor--blink"
-              aria-hidden="true"
-            ></span>
-          </p>
+    <!-- ──────────────────────────────────────────────
+         HERO
+         ────────────────────────────────────────────── -->
+    <section id="hero">
+      <div class="hero-content">
+        <p class="hero-greeting">Welcome to my portfolio</p>
+        <h1 class="hero-title">Hi, I'm <span class="highlight">Mina Khalil</span></h1>
+        <p class="hero-subtitle">
+          Full-Stack Software Engineer building scalable, modern web applications
+          with clean UX, sound architecture, and 12+ years of business domain expertise.
+        </p>
+        <div class="hero-typed-wrap">
+          I'm <span id="typed-output"></span><span class="typed-cursor">|</span>
         </div>
-      </section>
-      <!-- /Hero Section -->
+        <div class="hero-cta">
+          <a href="#portfolio" class="btn btn-primary"><i class="bi bi-images"></i> View Projects</a>
+          <a href="#contact" class="btn btn-outline"><i class="bi bi-envelope"></i> Get in Touch</a>
+        </div>
+      </div>
+    </section>
 
-      <!-- About Section -->
-      <section id="about" class="about section">
-        <div class="container section-title" data-aos="fade-up">
-          <h2>About Me</h2>
-          <p class="mb-0">
-            I design and ship
-            <strong>scalable, modern web applications</strong> with clean UX and
-            <strong>sound architecture</strong>—RESTful services, relational
-            schemas, caching layers, CI/CD, and reusable component systems. I
-            bring <strong>10+ years of finance experience</strong> to build
-            <strong>accurate, auditable, and automation-ready</strong> solutions
-            for real business workflows.
-          </p>
+    <!-- ──────────────────────────────────────────────
+         ABOUT
+         ────────────────────────────────────────────── -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="label">About Me</span>
+          <h2>Engineer & Analyst</h2>
+          <p>I design and ship scalable web applications with clean UX, backed by 12+ years of finance and data expertise.</p>
         </div>
 
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div class="row gy-4 justify-content-center">
-            <div class="col-lg-4">
-              <lottie-player
-                src="assets/animations/coder.json"
-                background="transparent"
-                speed="1"
-                style="width: 100%; height: auto"
-                loop
-                autoplay
-              ></lottie-player>
-            </div>
-            
-            <div class="col-lg-8 content">
-              <h3>Full-Stack Software Engineer &amp; Accounting Data Analyst</h3>
-              <p class="fst-italic py-3">
-                Based in San Francisco, CA, I build systems and web
-                apps with modern tooling—<strong
-                  >React, Redux, Flask, SQLAlchemy, PostgreSQL,
-                  Node/Express</strong
-                >—and a focus on clean UX, robust data models, and maintainable
-                code.
-              </p>
+        <div class="about-grid" data-aos="fade-up" data-aos-delay="100">
+          <div class="about-visual">
+            <lottie-player src="assets/animations/coder.json" background="transparent" speed="1" style="width:100%;max-width:380px;height:auto" loop autoplay></lottie-player>
+          </div>
 
-              <div class="row">
-                <div class="col-lg-6">
-                  <ul>
-                    <li>
-                      <i class="bi bi-chevron-right"></i>
-                      <strong>Background:</strong>
-                      <span>Full-Stack Software Engineer & Data Analyst with 10+ years in Accounting and Business Operations</span>
-                    </li>
-                    <li>
-                      <i class="bi bi-chevron-right"></i>
-                      <strong>Current Role:</strong>
-                      <span>Accounting & Data Analyst</span>
-                    </li>
-                    <li>
-                      <i class="bi bi-chevron-right"></i>
-                      <strong>Education:</strong>
-                      <span
-                        >App Academy — Software Engineering;
-                        <br />
-                        Bachelor’s in Accounting;
-                        <br />
-                        Postgraduate Diploma (Global Business)</span
-                      >
-                    </li>
-                    <li>
-                      <i class="bi bi-chevron-right"></i>
-                      <strong>Certification:</strong>
-                      <span>
-                        <a
-                          href="https://www.coursera.org/account/accomplishments/specialization/certificate/A8TUJDFZGXNX"
-                          target="_blank"
-                          rel="noopener"
-                          >Google IT Support — Professional Certificate (Click
-                          to View)</a
-                        >
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-lg-6">
-                  <ul>
-                    <li>
-                      <i class="bi bi-chevron-right"></i>
-                      <strong>Focus:</strong>
-                      <span
-                        >        Developing full-stack web applications and APIs that streamline business workflows, enhance data accuracy, and automate operations
-                        </span
-                      >
-                    </li>
-                    <li>
-                      <i class="bi bi-chevron-right"></i>
-                      <strong>Strengths:</strong>
-                      <span
-                        >        Full-stack development, API architecture, database modeling, process automation, data validation, and user-centered design (DX/UX)
-                        </span
-                      >
-                    </li>
-                    <li>
-                      <i class="bi bi-chevron-right"></i>
-                      <strong>Location:</strong>
-                      <span>San Francisco Bay Area, USA</span>
-                    </li>
-                    <li>
-                      <i class="bi bi-chevron-right"></i>
-                      <strong>Open to:</strong>
-                      <span>Software Engineering Roles &amp; collabs</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+          <div class="about-text">
+            <h3>Full-Stack Software Engineer</h3>
+            <p class="role-line">& Accounting Data Analyst</p>
+            <p>
+              Based in San Francisco, I build systems and web apps with modern tooling —
+              React, Redux, Flask, SQLAlchemy, PostgreSQL, Node/Express — with a focus
+              on clean UX, robust data models, and maintainable code.
+            </p>
 
-              <!-- Brand-colored animated roles -->
-              <p class="py-2 mb-3">
-                <span
-                  class="typed accent-typed"
-                  data-typed-items="Full-Stack Engineer, Accounting-savvy Developer"
-                ></span>
-              </p>
-
-              <!-- <p class="py-2 mb-0">
-                Passionate about <strong>automation</strong>,
-                <strong>data accuracy</strong>, and
-                <strong>delightful UX</strong>—turning complex back-office
-                workflows into intuitive web experiences.
-              </p> -->
+            <div class="info-grid">
+              <div class="info-item"><i class="bi bi-chevron-right info-icon"></i><div><strong>Background</strong><span>Full-Stack Engineer &amp; Data Analyst with 12+ years in Accounting</span></div></div>
+              <div class="info-item"><i class="bi bi-chevron-right info-icon"></i><div><strong>Focus</strong><span>Full-stack web apps &amp; APIs that streamline business workflows</span></div></div>
+              <div class="info-item"><i class="bi bi-chevron-right info-icon"></i><div><strong>Education</strong><span>App Academy (SE); Bachelor's in Accounting; PGDip (Global Business)</span></div></div>
+              <div class="info-item"><i class="bi bi-chevron-right info-icon"></i><div><strong>Strengths</strong><span>API architecture, database modeling, process automation, UX design</span></div></div>
+              <div class="info-item"><i class="bi bi-chevron-right info-icon"></i><div><strong>Location</strong><span>San Francisco Bay Area, USA</span></div></div>
+              <div class="info-item"><i class="bi bi-chevron-right info-icon"></i><div><strong>Open to</strong><span>Software Engineering Roles &amp; Collaborations</span></div></div>
+              <div class="info-item"><i class="bi bi-chevron-right info-icon"></i><div><strong>Certification</strong><span><a href="https://www.coursera.org/account/accomplishments/specialization/certificate/A8TUJDFZGXNX" target="_blank" rel="noopener">Google IT Support — Professional Certificate</a></span></div></div>
+              <div class="info-item"><i class="bi bi-chevron-right info-icon"></i><div><strong>Current Role</strong><span>Accounting &amp; Data Analyst @ Northgate</span></div></div>
             </div>
           </div>
         </div>
-      </section>
-      <!-- /About Section -->
-
-      <!-- Tech Stack Section -->
-<section id="skills" class="skills section light-background">
-  <div class="container section-title" data-aos="fade-up">
-    <h2>Tech Stack</h2>
-    <p>Core tools &amp; technologies I use day-to-day.</p>
-  </div>
-
-  <div class="container" data-aos="fade-up" data-aos-delay="100">
-    <div class="tech-badges text-center">
-      <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
-      <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white" alt="Flask" />
-      <img src="https://img.shields.io/badge/SQLAlchemy-646464?style=for-the-badge&logo=sqlalchemy&logoColor=red" alt="SQLAlchemy" />
-      <img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" />
-      <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
-      <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
-      <img src="https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white" alt="Redux" />
-      <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white" />
-      <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express.js" />
-      <img src="https://img.shields.io/badge/EJS-303030?style=for-the-badge&logo=ejs&logoColor=white" alt="EJS" />
-      <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js" />
-      <img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white" alt="npm" />
-      <img src="https://img.shields.io/badge/Sequelize-3E76A2?style=for-the-badge&logo=sequelize&logoColor=white" alt="Sequelize" />
-      <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
-      <img src="https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite" />
-      <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
-      <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
-      <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
-      <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap" />
-      <img src="https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white" alt="jQuery" />
-      <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white" alt="Postman" />
-      <img src="https://img.shields.io/badge/Render-00979D?style=for-the-badge&logo=render&logoColor=white" alt="Render" />
-      <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
-      <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
-      <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-      <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Figma" />
-      <img src="https://img.shields.io/badge/Adobe%20Photoshop-31A8FF?style=for-the-badge&logo=adobephotoshop&logoColor=white" alt="Photoshop" />
-      <img src="https://img.shields.io/badge/Adobe%20Illustrator-FF9A00?style=for-the-badge&logo=adobeillustrator&logoColor=white" alt="Illustrator" />
-    </div>
-  </div>
-  
-  </div>
-</section>
-
-<style>
-  .tech-badges {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-    animation: fadeIn 1s ease-in-out;
-  }
-
-  .tech-badges img {
-    border-radius: 6px;
-    border: 2px solid transparent;
-    transition: all 0.35s ease;
-    background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.15));
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  }
-
-  .tech-badges img:hover {
-    transform: scale(1.1);
-    border-image: linear-gradient(45deg, #00c6ff, #0072ff) 1;
-    box-shadow: 0 0 20px rgba(0, 162, 255, 0.6);
-    filter: brightness(1.1);
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(15px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-</style>
-
-
-          <!-- Progress bars intentionally hidden, kept for future use -->
-          <!--
-          <div class="row skills-content skills-animation mt-4"> ... </div>
-          -->
-        </div>
-      </section>
-      <!-- /Tech Stack Section -->
-       <!-- Lottie Resume Animation -->
-
-
-      <!-- Resume Section -->
-      <div class="portfolio-lottie" data-aos="fade-up" style="text-align:center; margin:10px 0 20px;">
-        <lottie-player
-          src="./assets/animations/Resume.json"
-          background="transparent"
-          speed="1"
-          style="width:320px; height:320px; display:inline-block;"
-          loop
-          autoplay
-        ></lottie-player>
       </div>
-      <section id="resume" class="resume section">
-        <div class="container section-title" data-aos="fade-up">
-          <h2>Resume</h2>
-          <p>
-            Software engineer with a foundation in accounting, focused on
-            building reliable, user-friendly business applications.
-          </p>
+    </section>
+
+    <!-- ──────────────────────────────────────────────
+         Award banner
+         ────────────────────────────────────────────── -->
+    <div class="award-banner" data-aos="fade-up">
+      <div class="container">
+        <div class="award-content">
+          <i class="bi bi-trophy-fill award-icon"></i>
+          <div class="award-text">
+            <h4>2025 Recognition Award — Northgate Environmental Management</h4>
+            <p>For Outstanding Performance, Leadership, and Contributions to the Company's Success</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ──────────────────────────────────────────────
+         Tech stack
+         ────────────────────────────────────────────── -->
+    <section id="skills" class="section section-light">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="label">Tech Stack</span>
+          <h2>Tools & Technologies</h2>
+          <p>Core tools I use day-to-day to build modern web applications.</p>
+        </div>
+        <div class="tech-grid" data-aos="fade-up" data-aos-delay="100">
+          <!-- Languages -->
+          <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+          <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
+          <img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Go" />
+          <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
+          <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
+          <!-- Back-end -->
+          <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white" alt="Flask" />
+          <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js" />
+          <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express.js" />
+          <img src="https://img.shields.io/badge/EJS-303030?style=for-the-badge&logo=ejs&logoColor=white" alt="EJS" />
+          <!-- Front-end -->
+          <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
+          <img src="https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white" alt="Redux" />
+          <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white" alt="Flutter" />
+          <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
+          <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap" />
+          <img src="https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white" alt="jQuery" />
+          <!-- Data -->
+          <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
+          <img src="https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite" />
+          <img src="https://img.shields.io/badge/SQLAlchemy-646464?style=for-the-badge&logo=sqlalchemy&logoColor=red" alt="SQLAlchemy" />
+          <img src="https://img.shields.io/badge/Sequelize-3E76A2?style=for-the-badge&logo=sequelize&logoColor=white" alt="Sequelize" />
+          <!-- DevOps & tools -->
+          <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
+          <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+          <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
+          <img src="https://img.shields.io/badge/Render-00979D?style=for-the-badge&logo=render&logoColor=white" alt="Render" />
+          <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white" alt="Postman" />
+          <img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white" alt="npm" />
+          <!-- Design -->
+          <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Figma" />
+          <img src="https://img.shields.io/badge/Adobe%20Photoshop-31A8FF?style=for-the-badge&logo=adobephotoshop&logoColor=white" alt="Photoshop" />
+          <img src="https://img.shields.io/badge/Adobe%20Illustrator-FF9A00?style=for-the-badge&logo=adobeillustrator&logoColor=white" alt="Illustrator" />
+          <!-- AI-assisted dev -->
+          <img src="https://img.shields.io/badge/Claude_Code-191919?style=for-the-badge&logo=anthropic&logoColor=white" alt="Claude Code" />
+          <img src="https://img.shields.io/badge/GitHub_Copilot-000000?style=for-the-badge&logo=githubcopilot&logoColor=white" alt="GitHub Copilot" />
+          <img src="https://img.shields.io/badge/OpenAI_Codex-412991?style=for-the-badge&logo=openai&logoColor=white" alt="OpenAI Codex" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ──────────────────────────────────────────────
+         RESUME
+         ────────────────────────────────────────────── -->
+    <section id="resume" class="section">
+      <div style="text-align:center; margin-bottom:20px;" data-aos="fade-up">
+        <lottie-player src="assets/animations/Resume.json" background="transparent" speed="1" style="width:280px;height:280px;display:inline-block;" loop autoplay></lottie-player>
+      </div>
+
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="label">Resume</span>
+          <h2>Experience & Education</h2>
+          <p>Software engineer with a foundation in accounting, focused on building reliable, user-friendly business applications.</p>
         </div>
 
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-              <h3 class="resume-title">Summary</h3>
-              <div class="resume-item pb-0">
-                <h4>Mina Khalil</h4>
-                <p>
-                  <em
-                    >Full-Stack Software Engineer &amp; Accounting Data Analyst
-                    passionate about modern UIs, robust APIs, and data-driven
-                    products.</em
-                  >
-                </p>
+        <!-- Summary — always visible, no accordion -->
+        <div class="resume-entry resume-summary" data-aos="fade-up" style="max-width:720px;margin:0 auto 24px;">
+          <h4>Mina Khalil</h4>
+          <p>Full-Stack Software Engineer &amp; Accounting Data Analyst passionate about modern UIs, robust APIs, and data-driven products.</p>
+          <div class="summary-links">
+            <a href="https://linkedin.com/in/mina-y-khalil" target="_blank" rel="noopener" class="summary-link" title="LinkedIn"><i class="bi bi-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/mina-y-khalil" target="_blank" rel="noopener" class="summary-link" title="GitHub"><i class="bi bi-github"></i> GitHub</a>
+            <a href="mailto:mina.y.khalil90@gmail.com" class="summary-link" title="Email"><i class="bi bi-envelope-fill"></i> Email</a>
+            <a href="https://mina-y-khalil.github.io/mina-y-khalil/" target="_blank" rel="noopener" class="summary-link" title="Portfolio"><i class="bi bi-globe2"></i> Portfolio</a>
+          </div>
+          <div class="summary-location">
+            <lottie-player src="assets/animations/USA flag.json" background="transparent" speed="1" loop autoplay style="width:28px;height:28px;display:inline-block;vertical-align:middle;pointer-events:none;"></lottie-player>
+            <span>San Francisco Bay Area, CA</span>
+          </div>
+          <div class="summary-print-links">
+            <p>San Francisco Bay Area, CA &nbsp;|&nbsp; 925-725-9295</p>
+            <p>LinkedIn: <a href="https://linkedin.com/in/mina-y-khalil">linkedin.com/in/mina-y-khalil</a></p>
+            <p>GitHub: <a href="https://github.com/mina-y-khalil">github.com/mina-y-khalil</a></p>
+            <p>Email: <a href="mailto:mina.y.khalil90@gmail.com">mina.y.khalil90@gmail.com</a></p>
+            <p>Portfolio: <a href="https://mina-y-khalil.github.io/mina-y-khalil/">mina-y-khalil.github.io/mina-y-khalil</a></p>
+          </div>
+        </div>
+
+        <!-- Stacked accordions — ordered by hiring manager priority -->
+        <div class="resume-accordions" data-aos="fade-up">
+
+          <!-- 1. Professional Experience (most important) -->
+          <div class="accordion resume-accordion">
+            <button class="accordion-toggle" aria-expanded="true">
+              <span><i class="bi bi-briefcase"></i> Professional Experience</span>
+              <i class="bi bi-chevron-down accordion-arrow"></i>
+            </button>
+            <div class="accordion-body open">
+              <div class="resume-entry">
+                <h4>Full-Stack Software Engineer (Part-Time)</h4>
+                <div class="date">Jan 2024 – Present</div>
+                <div class="location">Redeem Innovations LLC · San Francisco Bay Area</div>
                 <ul>
-                  <li>San Francisco Bay Area, CA</li>
-                  <li>
-                    <a
-                      href="https://linkedin.com/in/mina-y-khalil"
-                      target="_blank"
-                      rel="noopener"
-                      >linkedin.com/in/mina-y-khalil</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://github.com/mina-y-khalil"
-                      target="_blank"
-                      rel="noopener"
-                      >github.com/mina-y-khalil</a
-                    >
-                  </li>
-                  <li>
-                    <a href="mailto:mina.y.khalil90@gmail.com"
-                      >mina.y.khalil90@gmail.com</a
-                    >
-                  </li>
+                  <li>Developed and deployed client websites using WordPress + Elementor with custom React components for dynamic functionality.</li>
+                  <li>Designed database schemas and enhanced RESTful APIs, improving performance and integration reliability.</li>
+                  <li>Implemented Stripe and WooCommerce payment gateways, managing full e-commerce operations.</li>
+                  <li>Created UI/UX prototypes in Figma and delivered visual assets in Photoshop and Illustrator.</li>
                 </ul>
               </div>
+              <div class="resume-entry">
+                <h4>Accounting Data Analyst</h4>
+                <div class="date">Feb 2024 – Present</div>
+                <div class="location">Northgate Environmental Management · Oakland, CA</div>
+                <ul>
+                  <li>Engineered data pipelines processing 500+ monthly transactions, reducing reconciliation errors by 20% through automated validation logic.</li>
+                  <li>Architected scalable data models and interactive dashboards using advanced Excel and SQL-like structures, mirroring relational database design patterns.</li>
+                  <li>Built cross-departmental reporting systems with data visualization layers for real-time financial performance monitoring.</li>
+                  <li>Implemented QA-driven testing workflows for data integrity, systematically identifying anomalies and optimizing output accuracy.</li>
+                </ul>
+              </div>
+              <div class="resume-entry">
+                <h4>Accounting Manager</h4>
+                <div class="date">Jul 2017 – Apr 2023</div>
+                <div class="location">Aghsan</div>
+                <ul>
+                  <li>Architected end-to-end financial operations (AP, AR, procurement, payroll), designing scalable processes with built-in data validation layers.</li>
+                  <li>Deployed financial technology tools and automated reporting workflows, cutting manual reporting time by 40% and improving data accuracy.</li>
+                  <li>Led a cross-functional team, establishing data-driven practices and standardized operational frameworks across the finance organization.</li>
+                  <li>Developed compliance dashboards and reporting infrastructure to enhance transparency and real-time data visibility for stakeholders.</li>
+                </ul>
+              </div>
+              <div class="resume-entry">
+                <h4>Internal Auditor</h4>
+                <div class="date">Aug 2011 – May 2017</div>
+                <div class="location">Wadi Degla Clubs Company</div>
+                <ul>
+                  <li>Performed systematic audits across multiple departments, applying data analysis techniques to identify inefficiencies and optimize operational workflows.</li>
+                  <li>Executed compliance and risk assessments, strengthening internal control systems through automated checks and structured reporting pipelines.</li>
+                  <li>Delivered comprehensive audit reports with actionable insights, directly improving management decision-making and organizational transparency.</li>
+                  <li>Collaborated with cross-functional teams to re-engineer business processes, improving data accuracy, operational consistency, and system reliability.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
-              <h3 class="resume-title">Education</h3>
-              <div class="resume-item">
+          <!-- 2. Education -->
+          <div class="accordion resume-accordion">
+            <button class="accordion-toggle" aria-expanded="false">
+              <span><i class="bi bi-mortarboard"></i> Education</span>
+              <i class="bi bi-chevron-down accordion-arrow"></i>
+            </button>
+            <div class="accordion-body">
+              <div class="resume-entry">
                 <h4>App Academy — Full-Stack Software Engineering</h4>
-                <h5>San Francisco, CA</h5>
-                <p>
-                  <p><em>Intensive, project-based program covering modern web application development.</em></p>
-  <ul>
-    <li><strong>Front end:</strong> React (Hooks, Context), Redux, React Router, HTML5/CSS3, responsive design, accessibility.</li>
-    <li><strong>Back end:</strong> Python (Flask), Node.js/Express, RESTful APIs, authentication/authorization (JWT, sessions), middleware.</li>
-    <li><strong>Data & ORM:</strong> PostgreSQL, SQLite, SQLAlchemy, Sequelize, schema design, migrations, indexing, query optimization.</li>
-    <li><strong>Quality & testing:</strong> Postman, debugging, linting/formatting (Prettier).</li>
-    <li><strong>DevOps & deployment:</strong> Git/GitHub workflows, Docker, CI/CD basics, environment variables, deployment (Render).</li>
-    <!-- <li><strong>Architecture & patterns:</strong> MVP, service layers, data modeling, pagination, caching strategies.</li> -->
-    <!-- <li><strong>Collaboration:</strong> Agile/Scrum, code reviews, issue tracking, PRs, Figma handoff & UX collaboration.</li> -->
-  </ul>
+                <div class="location">San Francisco, CA</div>
+                <ul>
+                  <li><strong>Front end:</strong> React (Hooks, Context), Redux, React Router, HTML5/CSS3, responsive design.</li>
+                  <li><strong>Back end:</strong> Python (Flask), Node.js/Express, RESTful APIs, JWT auth, middleware.</li>
+                  <li><strong>Data &amp; ORM:</strong> PostgreSQL, SQLite, SQLAlchemy, Sequelize, schema design, migrations.</li>
+                  <li><strong>DevOps:</strong> Git/GitHub, Docker, CI/CD basics, Render deployment.</li>
+                </ul>
               </div>
-              
-              <div class="resume-item">
+              <div class="resume-entry">
                 <h4>Postgraduate Diploma in Global Business</h4>
-                <p><em>Paris Eslsca Business School</em></p>
+                <div class="location">Paris Eslsca Business School</div>
               </div>
-              <div class="resume-item">
-                <h4>Bachelor’s in Accounting</h4>
-                <p><em>Ain Shams University</em></p>
-
-               <!-- Courses -->
-                <h3 class="resume-title">Courses</h3>
-
-<div class="resume-item">
-  <h4>Google IT Support — Professional Certificate</h4>
-  <h5>2020</h5>
-  <p><em>Google, USA</em></p>
-  <ul>
-    <li>Google IT Support.</li>
-    <li>
-      <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/A8TUJDFZGXNX" target="_blank" rel="noopener">
-        View Credential
-      </a>
-    </li>
-  </ul>
-</div>
-
-<div class="resume-item">
-  <h4>Python Specialization</h4>
-  <h5>2020</h5>
-  <p><em>University of Michigan, USA</em></p>
-  <ul>
-    <li>Python programming language, data structures, and algorithms.</li>
-    <li>
-      <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/WEKGWLFUPXMQ" target="_blank" rel="noopener">
-        View Credential
-      </a>
-    </li>
-  </ul>
-</div>
-
-<!-- Licenses -->
-<h3 class="resume-title">Licenses</h3>
-
-<div class="resume-item">
-  <h4>Verified International Academic Qualifications</h4>
-  <h5>Issued 2023</h5>
-  <p><em>[ECE] Educational Credential Evaluators, Inc., U.S.</em></p>
-  <ul>
-    <li>Credential ID: G47993</li>
-    <!-- <li>
-      <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/A8TUJDFZGXNX"
-         target="_blank" rel="noopener">View Credential</a>
-    </li> -->
-  </ul>
-</div>
-
-<div class="resume-item">
-  <h4>Verified International Academic Qualifications</h4>
-  <h5>Issued 2022</h5>
-  <p><em>World Education Services</em></p>
-  <ul>
-    <!-- <li>Credential ID: META-FE-EXAMPLE</li> -->
-    <li>
-      <a href="https://www.credly.com/badges/10b908aa-edf6-4a97-a717-58c142dd9576?source=linked_in_profile"
-         target="_blank" rel="noopener">View Credential</a>
-    </li>
-  </ul>
-</div>
-
- 
-                </p>
-               
+              <div class="resume-entry">
+                <h4>Bachelor's in Accounting</h4>
+                <div class="location">Ain Shams University</div>
               </div>
             </div>
+          </div>
 
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-              <h3 class="resume-title">Professional Experience</h3>
+          <!-- 3. Courses & Certifications -->
+          <div class="accordion resume-accordion">
+            <button class="accordion-toggle" aria-expanded="false">
+              <span><i class="bi bi-patch-check"></i> Courses & Certifications</span>
+              <i class="bi bi-chevron-down accordion-arrow"></i>
+            </button>
+            <div class="accordion-body">
+              <div class="resume-entry">
+                <h4>Google IT Support — Professional Certificate</h4>
+                <div class="date">2020</div>
+                <div class="location">Google, USA</div>
+                <ul><li><a href="https://www.coursera.org/account/accomplishments/specialization/certificate/A8TUJDFZGXNX" target="_blank" rel="noopener" class="credential-link">View Credential</a></li></ul>
+              </div>
+              <div class="resume-entry">
+                <h4>Python Specialization</h4>
+                <div class="date">2020</div>
+                <div class="location">University of Michigan, USA</div>
+                <ul><li><a href="https://www.coursera.org/account/accomplishments/specialization/certificate/WEKGWLFUPXMQ" target="_blank" rel="noopener" class="credential-link">View Credential</a></li></ul>
+              </div>
+              <div class="resume-entry">
+                <h4>Relational Databases Essential Training</h4>
+                <div class="date">Feb 2026</div>
+                <div class="location">LinkedIn Learning</div>
+                <ul><li><a href="https://www.linkedin.com/learning/certificates/772bdb972e5dd96a94d4b021f2aff72c5d62f0afe993cdb58d86ec30631cfd88" target="_blank" rel="noopener" class="credential-link">View Credential</a></li></ul>
+              </div>
+              <div class="resume-entry">
+                <h4>Succeed in the Age of AI</h4>
+                <div class="date">Nov 2025</div>
+                <div class="location">Udemy — Dr. Angela Yu</div>
+                <ul><li><a href="https://www.udemy.com/certificate/UC-988e5eb6-7cb4-41df-8817-1821a8e1e0f4/" target="_blank" rel="noopener" class="credential-link">View Credential</a></li></ul>
+              </div>
+            </div>
+          </div>
 
-              <div class="resume-item">
-                <h4>Full-Stack Software Engineer (Part-Time)  @ Redeem Innovations LLC</h4>
-                <h5>Jan 2024 - Present</h5>
-                <p><em>San Francisco Bay Area</em></p>
+          <!-- 4. Licenses -->
+          <div class="accordion resume-accordion">
+            <button class="accordion-toggle" aria-expanded="false">
+              <span><i class="bi bi-award"></i> Licenses</span>
+              <i class="bi bi-chevron-down accordion-arrow"></i>
+            </button>
+            <div class="accordion-body">
+              <div class="resume-entry">
+                <h4>Verified International Academic Qualifications</h4>
+                <div class="date">Issued 2023</div>
+                <div class="location">Educational Credential Evaluators (ECE), USA</div>
+                <ul><li>Credential ID: G47993</li></ul>
+              </div>
+              <div class="resume-entry">
+                <h4>Verified International Academic Qualifications</h4>
+                <div class="date">Issued 2022</div>
+                <div class="location">World Education Services (WES), Canada</div>
+                <ul><li><a href="https://www.credly.com/badges/10b908aa-edf6-4a97-a717-58c142dd9576?source=linked_in_profile" target="_blank" rel="noopener" class="credential-link">View Credential</a></li></ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Volunteering -->
+          <div class="accordion resume-accordion">
+            <button class="accordion-toggle" aria-expanded="false">
+              <span><i class="bi bi-heart"></i> Volunteering</span>
+              <i class="bi bi-chevron-down accordion-arrow"></i>
+            </button>
+            <div class="accordion-body">
+              <div class="resume-entry">
+                <h4>Digital Operations Volunteer</h4>
+                <div class="date">Nov 2024 – Present</div>
+                <div class="location">Redeem Service · redeem-service.com</div>
                 <ul>
-                  <li>
-                    Developed and deployed client websites using WordPress + Elementor and integrated custom React components for dynamic functionality and scalability.
-                  </li>
-                  <li>
-                    Designed and maintained database schemas and enhanced RESTful APIs, improving site performance and integration reliability across multiple client systems.
-                  </li>
-                  <li>Implemented Stripe and WooCommerce payment gateways, managing full e-commerce operations from checkout optimization to automated order tracking.</li>
-                  <li>Created UI/UX prototypes in Figma and delivered visual assets in Photoshop and Illustrator, ensuring consistent branding and a seamless user experience across all devices.</li>
-                  
+                  <li>Managing web features and digital content for a bilingual spiritual platform serving Coptic Orthodox churches in the U.S.</li>
+                  <li>Maintaining educational resources, prayer tools, Bible study materials, and Sunday School curriculum to support faith communities worldwide.</li>
                 </ul>
               </div>
-
-              <div class="resume-item">
-                <h4>Accounting Data Analyst @ Northgate Environmental Management</h4>
-                <h5>Feb 2024 - Present</h5>
-                <p><em>San Francisco Bay Area</em></p>
-                <ul>
-                  <li>
-                    Processed 500+ AP/AR transactions monthly, reducing reconciliation errors by 20% and ensuring 100% system accuracy across departments.
-                  </li>
-                  <li>
-                    Designed and maintained data models and financial dashboards using advanced Excel and SQL-like logic, mirroring backend database structures for scalability and accuracy.
-                  </li>
-                  <li>Developed and tracked multi-departmental budget reports, leveraging data visualization and analytics techniques to ensure consistent financial performance monitoring.</li>
-                  <li>Conducted detailed data validation and reconciliation, implementing QA-style testing workflows to identify anomalies and optimize reporting accuracy.</li>
-                  
-                </ul>
-              </div>
-
-              <!-- Add/Adjust your past roles below. Replace titles/dates as needed. -->
-              <div class="resume-item">
-  <h4>Senior Accountant @ J&K Distribution</h4>
-  <h5>May 2023 - Feb 2024</h5>
-  <p><em>Hayward, CA</em></p>
-  <ul>
-    <li>
-      Improved financial data accuracy and compliance by developing structured workflows aligned with accounting standards and system validation principles.
-    </li>
-    <li>
-      Streamlined AP/AR processes, automating invoice tracking and cutting processing time by 25%, accelerating month-end close by 2 days.    </li>
-    <li>
-      Utilized SAP Business One to design and generate data-driven financial reports, integrating structured datasets for better cross-departmental visibility and decision-making.    </li>
-  </ul>
-</div>
-
-
-              <div class="resume-item">
-                <h4>Accounting Manager @ Aghsan</h4>
-                <h5>July 2017 to Apr 2023</h5>
-                <!-- <p><em>Various Organizations</em></p> -->
-                <ul>
-                  <li>
-                    Directed full-cycle accounting operations (AP, AR, procurement, payroll), designing scalable processes that ensured accuracy and system efficiency.
-                  </li>
-                  <li>
-                    Implemented financial technology tools and automated reporting workflows, cutting manual reporting time by 40% and increasing management data accuracy.
-                  </li>
-                  <li>
-                    Supervised and mentored a cross-functional finance team, fostering a data-driven culture of precision and accountability.
-                  </li>
-                  <li>
-                    Developed reporting frameworks and compliance dashboards to enhance transparency and data visibility for key stakeholders.
-                  </li>
-                  
-                </ul>
-              </div>
-              <div class="resume-item">
-                <h4>Internal Auditor &amp; @ Wadi Degla Clubs Company</h4>
-                <h5>Aug 2011 to May 2017</h5>
-                <!-- <p><em>Various Organizations</em></p> -->
-                <ul>
-                  <li>
-                    Conducted financial and operational audits across multiple departments, leveraging data analysis to identify inefficiencies and optimize business processes.                  </li>
-                  <li>
-                    Performed compliance and risk assessments, ensuring adherence to financial regulations and strengthening internal control systems through automated checks and reporting.                  </li>
-                  <li>
-                    Delivered comprehensive audit reports with actionable insights, enhancing management decision-making and organizational transparency.                  </li>
-                  <li>
-                    Partnered with cross-functional teams to redesign workflows, improving data accuracy, operational consistency, and system reliability.                  </li>
-                  
-                </ul>
-              </div>
-              <!-- End additional experience -->
             </div>
           </div>
-        </div>
-      </section>
-      <!-- /Resume Section -->
 
-
-<!-- Portfolio Section -->
-<!-- Lottie Portfolio Animation -->
-<div class="portfolio-lottie" data-aos="fade-up" style="text-align:center; margin:40px 0;">
-  <lottie-player
-    src="./assets/animations/Portfolio.json"
-    background="transparent"
-    speed="1"
-    style="width:400px; height:400px; display:inline-block;"
-    loop
-    autoplay
-  ></lottie-player>
-</div>
-<section id="portfolio" class="portfolio section light-background">
-  <div class="container section-title" data-aos="fade-up">
-    
-    <h2>Featured Projects</h2>
-    <p>
-      Production-ready builds and client projects, including full-stack apps and custom WordPress websites. Explore the code and live demos where available.
-    </p>
-  </div>
-
-  <div class="container">
-    <div
-      class="isotope-layout"
-      data-default-filter="*"
-      data-layout="masonry"
-      data-sort="original-order"
-    >
-      <ul
-        class="portfolio-filters isotope-filters"
-        data-aos="fade-up"
-        data-aos-delay="100"
-      >
-        <li data-filter="*" class="filter-active">All</li>
-        <li data-filter=".filter-app">Web Apps</li>
-        <li data-filter=".filter-product">WordPress & Elementor</li>
-      </ul>
-
-      <div
-        class="row gy-4 isotope-container"
-        data-aos="fade-up"
-        data-aos-delay="200"
-      >
-        <!-- RedeemBooks -->
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-          <div class="portfolio-content h-100">
-            <img
-              src="https://redeem-innovations.com/wp-content/uploads/2025/08/RedeemBooks-Logo-1.png"
-              class="img-fluid"
-              alt="RedeemBooks preview"
-            />
-            <div class="portfolio-info">
-              <h4>RedeemBooks</h4>
-              <p>Full-stack accounting platform for managing vendors, invoices, and payments efficiently.</p>
-              <a
-                href="https://redeem-innovations.com/wp-content/uploads/2025/08/RedeemBooks-Logo-1.png"
-                title="RedeemBooks"
-                data-gallery="portfolio-gallery-app"
-                class="glightbox preview-link"
-                ><i class="bi bi-zoom-in"></i></a>
-              <a
-                href="https://github.com/mina-y-khalil/redeembooks-accounting-app"
-                title="GitHub Repo"
-                class="details-link"
-                target="_blank"
-                rel="noopener"
-                ><i class="bi bi-link-45deg"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Pintrix -->
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-          <div class="portfolio-content h-100">
-            <img
-              src="https://redeem-innovations.com/wp-content/uploads/2025/08/Pintrix.png"
-              class="img-fluid"
-              alt="Pintrix preview"
-            />
-            <div class="portfolio-info">
-              <h4>Pintrix</h4>
-              <p>Pinterest-inspired app for sharing and organizing visual ideas with comments and favorites.</p>
-              <a
-                href="https://redeem-innovations.com/wp-content/uploads/2025/08/Pintrix.png"
-                title="Pintrix"
-                data-gallery="portfolio-gallery-app"
-                class="glightbox preview-link"
-                ><i class="bi bi-zoom-in"></i></a>
-              <a
-                href="https://github.com/mina-y-khalil/Pintrix---Fullstack"
-                title="GitHub Repo"
-                class="details-link"
-                target="_blank"
-                rel="noopener"
-                ><i class="bi bi-link-45deg"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Windbnb -->
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-          <div class="portfolio-content h-100">
-            <img
-              src="https://redeem-innovations.com/wp-content/uploads/2025/08/windbnb.png"
-              class="img-fluid"
-              alt="Windbnb preview"
-            />
-            <div class="portfolio-info">
-              <h4>Windbnb</h4>
-              <p>Airbnb-style web app with listings, reviews, and responsive design for a smooth booking experience.</p>
-              <a
-                href="https://redeem-innovations.com/wp-content/uploads/2025/08/windbnb.png"
-                title="Windbnb"
-                data-gallery="portfolio-gallery-app"
-                class="glightbox preview-link"
-                ><i class="bi bi-zoom-in"></i></a>
-              <a
-                href="https://github.com/mina-y-khalil/Windbnb---Fullstack"
-                title="GitHub Repo"
-                class="details-link"
-                target="_blank"
-                rel="noopener"
-                ><i class="bi bi-link-45deg"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Redeem Innovations -->
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-          <div class="portfolio-content h-100">
-            <img
-              src="https://redeem-innovations.com/wp-content/uploads/2025/10/redeem-innovations.png"
-              class="img-fluid"
-              alt="Redeem Innovations website preview"
-            />
-            <div class="portfolio-info">
-              <h4>Redeem Innovations</h4>
-              <p>Creative studio specializing in printing, web development, and graphic design for businesses and ministries.</p>
-              <a
-                href="https://redeem-innovations.com/wp-content/uploads/2025/10/redeem-innovations.png"
-                title="Redeem Innovations"
-                data-gallery="portfolio-gallery-product"
-                class="glightbox preview-link"
-                ><i class="bi bi-zoom-in"></i></a>
-              <a
-                href="https://redeem-innovations.com/"
-                title="Visit Website"
-                class="details-link"
-                target="_blank"
-                rel="noopener"
-                ><i class="bi bi-link-45deg"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Redeem Service -->
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-          <div class="portfolio-content h-100">
-            <img
-              src="https://redeem-innovations.com/wp-content/uploads/2025/10/redeem-service.png"
-              class="img-fluid"
-              alt="Redeem Service website preview"
-            />
-            <div class="portfolio-info">
-              <h4>Redeem Service</h4>
-              <p>Bilingual platform serving the Coptic Orthodox Church in the U.S. and Egypt, enhancing accessibility and community engagement.</p>
-              <a
-                href="https://redeem-innovations.com/wp-content/uploads/2025/10/redeem-service.png"
-                title="Redeem Service"
-                data-gallery="portfolio-gallery-product"
-                class="glightbox preview-link"
-                ><i class="bi bi-zoom-in"></i></a>
-              <a
-                href="https://redeem-service.com/"
-                title="Visit Website"
-                class="details-link"
-                target="_blank"
-                rel="noopener"
-                ><i class="bi bi-link-45deg"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Evolve Genomix -->
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-          <div class="portfolio-content h-100">
-            <img
-              src="https://redeem-innovations.com/wp-content/uploads/2025/10/evolve-logo-port.png"
-              class="img-fluid"
-              alt="Evolve Genomix website preview"
-            />
-            <div class="portfolio-info">
-              <h4>Evolve Genomix</h4>
-              <p>Biotech company democratizing genomic technologies to transform food, agriculture, and public health.</p>
-              <a
-                href="https://redeem-innovations.com/wp-content/uploads/2025/10/evolve-logo-port.png"
-                title="Evolve Genomix"
-                data-gallery="portfolio-gallery-product"
-                class="glightbox preview-link"
-                ><i class="bi bi-zoom-in"></i></a>
-              <a
-                href="https://www.evolvegenomix.com/"
-                title="Visit Website"
-                class="details-link"
-                target="_blank"
-                rel="noopener"
-                ><i class="bi bi-link-45deg"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- JRMY -->
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-          <div class="portfolio-content h-100">
-            <img
-              src="https://redeem-innovations.com/wp-content/uploads/2025/10/JRMY.png"
-              class="img-fluid"
-              alt="JRMY Medical Transportation website preview"
-            />
-            <div class="portfolio-info">
-              <h4>JRMY Medical Transportation</h4>
-              <p>Professional medical transportation site providing online booking and service details for clients.</p>
-              <a
-                href="https://redeem-innovations.com/wp-content/uploads/2025/10/JRMY.png"
-                title="JRMY Medical Transportation"
-                data-gallery="portfolio-gallery-product"
-                class="glightbox preview-link"
-                ><i class="bi bi-zoom-in"></i></a>
-              <a
-                href="https://jrmymed.com/"
-                title="Visit Website"
-                class="details-link"
-                target="_blank"
-                rel="noopener"
-                ><i class="bi bi-link-45deg"></i></a>
-            </div>
-          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-<!-- /Portfolio Section -->
+    </section>
 
-      <!-- /Portfolio Section -->
-
-      <!-- Testimonials Section (COMMENTED OUT AS REQUESTED) -->
-      <!--
-      <section id="testimonials" class="testimonials section light-background">
-        <div class="container section-title" data-aos="fade-up">
-          <h2>Testimonials</h2>
-          <p>What collaborators and stakeholders say.</p>
-        </div>
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper init-swiper">
-            <script type="application/json" class="swiper-config">
-              {
-                "loop": true,
-                "speed": 600,
-                "autoplay": { "delay": 5000 },
-                "slidesPerView": "auto",
-                "pagination": { "el": ".swiper-pagination", "type": "bullets", "clickable": true },
-                "breakpoints": { "320": { "slidesPerView": 1, "spaceBetween": 40 }, "1200": { "slidesPerView": 3, "spaceBetween": 1 } }
-              }
-            </script>
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i
-                    ><span>Mina delivers polished, reliable features with great attention to UX.</span
-                    ><i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                  <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="" />
-                  <h3>Colleague</h3>
-                  <h4>Software Engineer</h4>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i
-                    ><span>Brings practical accounting insights to engineering decisions.</span
-                    ><i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                  <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="" />
-                  <h3>Manager</h3>
-                  <h4>Accounting</h4>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i
-                    ><span>Clear communicator and problem solver under pressure.</span
-                    ><i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                  <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="" />
-                  <h3>Partner</h3>
-                  <h4>Client</h4>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
-      </section>
-      -->
-      <!-- /Testimonials Section -->
-      <!-- Lottie Contact Animation -->
-<div class="portfolio-lottie" data-aos="fade-up" style="text-align:center; margin:10px 0 20px;">
-  <lottie-player
-    src="./assets/animations/Contact.json"
-    background="transparent"
-    speed="1"
-    style="width:320px; height:320px; display:inline-block;"
-    loop
-    autoplay
-  ></lottie-player>
-</div>
-
-<!-- Contact Section -->
-<section id="contact" class="contact section">
-  <div class="container section-title" data-aos="fade-up">
-    <h2>Contact</h2>
-    <p>Let’s build something great together.</p>
-  </div>
-
-  <div class="container" data-aos="fade-up" data-aos-delay="100">
-    <div class="row gy-4">
-      <!-- Info column -->
-      <div class="col-lg-5">
-        <div class="info-wrap">
-          <!-- Location -->
-          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-            <lottie-player
-              src="assets/animations/Location.json"
-              background="transparent"
-              speed="1"
-              loop
-              autoplay
-              class="flex-shrink-0"
-              style="width: 80px; height: 80px; pointer-events: none;">
-            </lottie-player>
-            <div>
-              <h3>Location</h3>
-              <p>San Francisco Bay Area, CA</p>
-            </div>
-          </div>
-
-          <!-- Email -->
-          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="250">
-            <lottie-player
-              src="assets/animations/Gmailicons2.json"
-              background="transparent"
-              speed="1"
-              loop
-              autoplay
-              class="flex-shrink-0"
-              style="width: 80px; height: 80px; pointer-events: none;">
-            </lottie-player>
-            <div>
-              <h3>Email</h3>
-              <p>
-                <a href="mailto:mina.y.khalil90@gmail.com">mina.y.khalil90@gmail.com</a>
-              </p>
-            </div>
-          </div>
-
-          <!-- LinkedIn -->
-          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-            <lottie-player
-              src="assets/animations/Linkedinicons2.json"
-              background="transparent"
-              speed="1"
-              loop
-              autoplay
-              class="flex-shrink-0"
-              style="width: 80px; height: 80px; pointer-events: none;">
-            </lottie-player>
-            <div>
-              <h3>LinkedIn</h3>
-              <p>
-                <a href="https://linkedin.com/in/mina-y-khalil" target="_blank" rel="noopener">
-                  linkedin.com/in/mina-y-khalil
-                </a>
-              </p>
-            </div>
-          </div>
-
-          <!-- GitHub -->
-          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="350">
-            <lottie-player
-              src="assets/animations/Githubicons2.json"
-              background="transparent"
-              speed="1"
-              loop
-              autoplay
-              class="flex-shrink-0"
-              style="width: 80px; height: 80px; pointer-events: none;">
-            </lottie-player>
-            <div>
-              <h3>GitHub</h3>
-              <p>
-                <a href="https://github.com/mina-y-khalil" target="_blank" rel="noopener">
-                  github.com/mina-y-khalil
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
+    <!-- ──────────────────────────────────────────────
+         PROJECTS
+         ────────────────────────────────────────────── -->
+    <section id="portfolio" class="section section-light">
+      <div style="text-align:center; margin-bottom:20px;" data-aos="fade-up">
+        <lottie-player src="assets/animations/Portfolio.json" background="transparent" speed="1" style="width:320px;height:320px;display:inline-block;" loop autoplay></lottie-player>
       </div>
 
-      <!-- Contact form column -->
-      <div class="col-lg-7">
-        <form
-          action="https://formsubmit.co/mina.y.khalil90@gmail.com"
-          method="POST"
-          class="php-email-form"
-          data-aos="fade-up"
-          data-aos-delay="200">
-          <!-- FormSubmit options -->
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_template" value="table" />
-          <input type="hidden" name="_subject" value="New message from your portfolio site" />
-          <input type="hidden" name="_autoresponse" value="Thanks for reaching out! I’ll get back to you soon." />
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="label">Portfolio</span>
+          <h2>Featured Projects</h2>
+          <p>Production-ready builds and client projects. Explore the code and live demos where available.</p>
+        </div>
 
-          <div class="row gy-4">
-            <div class="col-md-6">
-              <label for="name-field" class="pb-2">Your Name</label>
-              <input
-                type="text"
-                name="name"
-                id="name-field"
-                class="form-control"
-                required
-              />
-            </div>
+        <ul class="portfolio-filters" data-aos="fade-up" data-aos-delay="100">
+          <li data-filter="*" class="filter-active">All</li>
+          <li data-filter="filter-app">Web Apps</li>
+          <li data-filter="filter-product">WordPress &amp; Elementor</li>
+        </ul>
 
-            <div class="col-md-6">
-              <label for="email-field" class="pb-2">Your Email</label>
-              <input
-                type="email"
-                class="form-control"
-                name="email"
-                id="email-field"
-                required
-              />
-            </div>
+        <div class="projects-grid" data-aos="fade-up" data-aos-delay="200">
 
-            <div class="col-md-12">
-              <label for="subject-field" class="pb-2">Subject</label>
-              <input
-                type="text"
-                class="form-control"
-                name="subject"
-                id="subject-field"
-                required
-              />
-            </div>
+          <div class="project-card isotope-item filter-app"><span class="project-tag">Web App</span><img src="https://redeem-innovations.com/wp-content/uploads/2025/08/RedeemBooks-Logo-1.png" class="project-card-img" alt="RedeemBooks" /><div class="project-card-body"><h4>RedeemBooks</h4><p>Full-stack accounting platform for managing vendors, invoices, and payments efficiently.</p><div class="project-links"><a href="https://github.com/mina-y-khalil/redeembooks-accounting-app" target="_blank" rel="noopener"><i class="bi bi-github"></i> Code</a></div></div><div class="project-qr"><img data-qr="https://github.com/mina-y-khalil/redeembooks-accounting-app" alt="QR" /><span>Scan</span></div></div>
 
-            <div class="col-md-12">
-              <label for="message-field" class="pb-2">Message</label>
-              <textarea
-                class="form-control"
-                name="message"
-                rows="10"
-                id="message-field"
-                required
-              ></textarea>
-            </div>
+          <div class="project-card isotope-item filter-app"><span class="project-tag">Web App</span><img src="https://redeem-innovations.com/wp-content/uploads/2025/08/Pintrix.png" class="project-card-img" alt="Pintrix" /><div class="project-card-body"><h4>Pintrix</h4><p>Pinterest-inspired app for sharing and organizing visual ideas with comments and favorites.</p><div class="project-links"><a href="https://github.com/mina-y-khalil/Pintrix---Fullstack" target="_blank" rel="noopener"><i class="bi bi-github"></i> Code</a></div></div><div class="project-qr"><img data-qr="https://github.com/mina-y-khalil/Pintrix---Fullstack" alt="QR" /><span>Scan</span></div></div>
 
-            <div class="col-md-12 text-center">
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">
-                Your message has been sent. Thank you!
-              </div>
-              <button type="submit">Send Message</button>
-            </div>
-          </div>
-        </form>
+          <div class="project-card isotope-item filter-app"><span class="project-tag">Web App</span><img src="https://redeem-innovations.com/wp-content/uploads/2025/08/windbnb.png" class="project-card-img" alt="Windbnb" /><div class="project-card-body"><h4>Windbnb</h4><p>Airbnb-style web app with listings, reviews, and responsive design for a smooth booking experience.</p><div class="project-links"><a href="https://github.com/mina-y-khalil/Windbnb---Fullstack" target="_blank" rel="noopener"><i class="bi bi-github"></i> Code</a></div></div><div class="project-qr"><img data-qr="https://github.com/mina-y-khalil/Windbnb---Fullstack" alt="QR" /><span>Scan</span></div></div>
+
+          <div class="project-card isotope-item filter-product"><span class="project-tag">WordPress</span><img src="https://redeem-innovations.com/wp-content/uploads/2025/10/redeem-innovations.png" class="project-card-img" alt="Redeem Innovations" /><div class="project-card-body"><h4>Redeem Innovations</h4><p>Creative studio specializing in printing, web development, and graphic design for businesses.</p><div class="project-links"><a href="https://redeem-innovations.com/" target="_blank" rel="noopener"><i class="bi bi-globe"></i> Live</a></div></div><div class="project-qr"><img data-qr="https://redeem-innovations.com/" alt="QR" /><span>Scan</span></div></div>
+
+          <div class="project-card isotope-item filter-product"><span class="project-tag">WordPress</span><img src="https://redeem-innovations.com/wp-content/uploads/2025/10/redeem-service.png" class="project-card-img" alt="Redeem Service" /><div class="project-card-body"><h4>Redeem Service</h4><p>Bilingual platform serving the Coptic Orthodox Church, enhancing accessibility and community engagement.</p><div class="project-links"><a href="https://redeem-service.com/" target="_blank" rel="noopener"><i class="bi bi-globe"></i> Live</a></div></div><div class="project-qr"><img data-qr="https://redeem-service.com/" alt="QR" /><span>Scan</span></div></div>
+
+          <div class="project-card isotope-item filter-product"><span class="project-tag">WordPress</span><img src="https://redeem-innovations.com/wp-content/uploads/2025/10/evolve-logo-port.png" class="project-card-img" alt="Evolve Genomix" /><div class="project-card-body"><h4>Evolve Genomix</h4><p>Biotech company democratizing genomic technologies to transform food, agriculture, and public health.</p><div class="project-links"><a href="https://www.evolvegenomix.com/" target="_blank" rel="noopener"><i class="bi bi-globe"></i> Live</a></div></div><div class="project-qr"><img data-qr="https://www.evolvegenomix.com/" alt="QR" /><span>Scan</span></div></div>
+
+          <div class="project-card isotope-item filter-product"><span class="project-tag">WordPress</span><img src="https://redeem-innovations.com/wp-content/uploads/2025/10/JRMY.png" class="project-card-img" alt="JRMY Medical Transportation" /><div class="project-card-body"><h4>JRMY Medical Transportation</h4><p>Professional medical transportation site with online booking and service details.</p><div class="project-links"><a href="https://jrmymed.com/" target="_blank" rel="noopener"><i class="bi bi-globe"></i> Live</a></div></div><div class="project-qr"><img data-qr="https://jrmymed.com/" alt="QR" /><span>Scan</span></div></div>
+
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-      <!-- /Contact Section -->
-    </main>
+    <!-- ──────────────────────────────────────────────
+         CONTACT
+         ────────────────────────────────────────────── -->
+    <section id="contact" class="section">
+      <div style="text-align:center; margin-bottom:20px;" data-aos="fade-up">
+        <lottie-player src="assets/animations/Contact.json" background="transparent" speed="1" style="width:280px;height:280px;display:inline-block;" loop autoplay></lottie-player>
+      </div>
 
-    <footer id="footer" class="footer position-relative light-background">
-      <div class="container text-center">
-        <!-- Coding animation centered above the tagline -->
-        <div style="margin-bottom: 10px;">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="label">Contact</span>
+          <h2>Let's Connect</h2>
+          <p>Have a project in mind or want to collaborate? Let's build something great together.</p>
+        </div>
+
+        <div class="contact-grid" data-aos="fade-up" data-aos-delay="100">
+          <div class="contact-info">
+            <div class="contact-card"><lottie-player src="assets/animations/Location.json" background="transparent" speed="1" loop autoplay class="c-icon" style="width:64px;height:64px;pointer-events:none;"></lottie-player><div><h4>Location</h4><p>San Francisco Bay Area, CA</p></div></div>
+            <div class="contact-card"><lottie-player src="assets/animations/Gmailicons2.json" background="transparent" speed="1" loop autoplay class="c-icon" style="width:64px;height:64px;pointer-events:none;"></lottie-player><div><h4>Email</h4><p><a href="mailto:mina.y.khalil90@gmail.com">mina.y.khalil90@gmail.com</a></p></div></div>
+            <div class="contact-card"><lottie-player src="assets/animations/Linkedinicons2.json" background="transparent" speed="1" loop autoplay class="c-icon" style="width:64px;height:64px;pointer-events:none;"></lottie-player><div><h4>LinkedIn</h4><p><a href="https://linkedin.com/in/mina-y-khalil" target="_blank" rel="noopener">linkedin.com/in/mina-y-khalil</a></p></div></div>
+            <div class="contact-card"><lottie-player src="assets/animations/Githubicons2.json" background="transparent" speed="1" loop autoplay class="c-icon" style="width:64px;height:64px;pointer-events:none;"></lottie-player><div><h4>GitHub</h4><p><a href="https://github.com/mina-y-khalil" target="_blank" rel="noopener">github.com/mina-y-khalil</a></p></div></div>
+          </div>
+
+          <form id="contactForm" class="contact-form">
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_subject" value="New message from your portfolio site" />
+            <input type="hidden" name="_autoresponse" value="Thanks for reaching out! I'll get back to you soon." />
+            <div class="form-row">
+              <div class="form-group"><label for="name-field">Your Name</label><input type="text" name="name" id="name-field" required /></div>
+              <div class="form-group"><label for="email-field">Your Email</label><input type="email" name="email" id="email-field" required /></div>
+            </div>
+            <div class="form-group"><label for="subject-field">Subject</label><input type="text" name="subject" id="subject-field" required /></div>
+            <div class="form-group"><label for="message-field">Message</label><textarea name="message" id="message-field" rows="6" required></textarea></div>
+            <button type="submit" class="btn btn-primary" id="submitBtn"><i class="bi bi-send"></i> Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ──────────────────────────────────────────────
+         Footer — no Lottie before tagline, rocket animation inline
+         ────────────────────────────────────────────── -->
+    <footer id="footer">
+      <div class="container">
+        <p class="footer-tagline">
+          I code what I once dreamed
           <lottie-player
-            src="assets/animations/Coding - footer.json"
-            background="transparent"
-            speed="1"
-            loop
-            autoplay
-            style="width: 90px; height: 90px; pointer-events: none; margin: 0 auto;">
-          </lottie-player>
-        </div>
-        <div class="copyright">
-          <p>
-            <strong class="px-1 sitename">I code what I once dreamed 🚀🚀🚀</strong>
-          </p>
-        </div>
-        <!-- Credits intentionally removed -->
+            src="https://redeem-innovations.com/wp-content/uploads/2026/03/Rocket-3.json"
+            background="transparent" speed="1" loop autoplay
+            style="width:36px;height:36px;display:inline-block;vertical-align:middle;pointer-events:none;"
+          ></lottie-player>
+        </p>
       </div>
     </footer>
-    
 
-    <!-- Scroll Top -->
-    <a
-      href="#"
-      id="scroll-top"
-      class="scroll-top d-flex align-items-center justify-content-center"
-      ><i class="bi bi-arrow-up-short"></i
-    ></a>
+  </div><!-- /.main-content -->
 
-<!-- Preloader -->
-<div id="preloader"></div>
+  <!-- ────────────────────────────────────────────────
+       Scroll-to-top (white stroke border)
+       ──────────────────────────────────────────────── -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <i class="bi bi-arrow-up-short"></i>
+  </button>
 
-<!-- Vendor JS Files -->
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/vendor/aos/aos.js"></script>
-<script src="assets/vendor/typed.js/typed.umd.js"></script>
-<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <!-- ────────────────────────────────────────────────
+       Scripts
+       ──────────────────────────────────────────────── -->
+  <script>
+    (function () {
+      'use strict';
 
-<!-- Reliable CDN versions -->
-<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
-<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-
-<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-<script src="assets/js/main.js"></script>
-
-<!-- Isotope Filtering -->
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const grid = document.querySelector(".isotope-container");
-  if (!grid) return;
-
-  // Wait until images load
-  imagesLoaded(grid, function () {
-    const iso = new Isotope(grid, {
-      itemSelector: ".isotope-item",
-      layoutMode: "masonry"
-    });
-
-    const filters = document.querySelectorAll(".portfolio-filters li");
-    filters.forEach((filter) => {
-      filter.addEventListener("click", function (e) {
-        e.preventDefault();
-        filters.forEach((f) => f.classList.remove("filter-active"));
-        this.classList.add("filter-active");
-        iso.arrange({ filter: this.getAttribute("data-filter") });
+      /* Preloader */
+      window.addEventListener('load', function () {
+        document.getElementById('preloader').classList.add('loaded');
       });
-    });
-  });
-});
-</script>
 
-<!-- Gmail fallback for email icon -->
-<script>
-(function () {
-  var a = document.querySelector(".social-links a.email");
-  if (!a) return;
-  a.addEventListener("click", function () {
-    setTimeout(function () {
-      if (!document.hasFocus()) return;
-      window.open(
-        "https://mail.google.com/mail/?view=cm&to=mina.y.khalil90@gmail.com&su=Hi%20Mina&body=Hi%20Mina%2C",
-        "_blank"
-      );
-    }, 400);
-  });
-})();
-</script>
+      /* AOS REPLACEMENT */
+      var aosEls = document.querySelectorAll('[data-aos]');
+      if ('IntersectionObserver' in window) {
+        var aosObs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { e.target.classList.add('aos-animate'); aosObs.unobserve(e.target); }
+          });
+        }, { threshold: 0.1 });
+        aosEls.forEach(function (el) { aosObs.observe(el); });
+      } else {
+        aosEls.forEach(function (el) { el.classList.add('aos-animate'); });
+      }
+
+      /* TYPED REPLACEMENT */
+      var typedOutput = document.getElementById('typed-output');
+      var strings = ['a Full-Stack Software Engineer','a Python Developer','a React Developer','an AI Learner'];
+      var si = 0, ci = 0, deleting = false;
+      function typeLoop() {
+        var cur = strings[si];
+        typedOutput.textContent = deleting ? cur.substring(0, ci - 1) : cur.substring(0, ci + 1);
+        deleting ? ci-- : ci++;
+        var delay = 60;
+        if (!deleting && ci === cur.length) { delay = 2000; deleting = true; }
+        else if (deleting && ci === 0) { deleting = false; si = (si + 1) % strings.length; delay = 300; }
+        else if (deleting) { delay = 30; }
+        setTimeout(typeLoop, delay);
+      }
+      typeLoop();
+
+      /* SIDEBAR */
+      var sidebar = document.getElementById('sidebar');
+      var sidebarToggle = document.getElementById('sidebarToggle');
+      var sidebarOverlay = document.getElementById('sidebarOverlay');
+      function closeSidebar() { sidebar.classList.remove('open'); sidebarOverlay.classList.remove('active'); }
+      sidebarToggle.addEventListener('click', function () { sidebar.classList.toggle('open'); sidebarOverlay.classList.toggle('active'); });
+      sidebarOverlay.addEventListener('click', closeSidebar);
+      document.querySelectorAll('.sidebar-nav a').forEach(function (l) { l.addEventListener('click', closeSidebar); });
+
+      /* SCROLL SPY */
+      var sections = document.querySelectorAll('section[id]');
+      var navLinks = document.querySelectorAll('.sidebar-nav a');
+      window.addEventListener('scroll', function () {
+        var y = window.scrollY + 120;
+        sections.forEach(function (s) {
+          if (y >= s.offsetTop && y < s.offsetTop + s.offsetHeight) {
+            navLinks.forEach(function (l) { l.classList.toggle('active', l.getAttribute('href') === '#' + s.id); });
+          }
+        });
+      });
+
+      /* Scroll-to-top */
+      var scrollTopBtn = document.getElementById('scrollTop');
+      window.addEventListener('scroll', function () { scrollTopBtn.classList.toggle('visible', window.scrollY > 400); });
+      scrollTopBtn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+      /* PORTFOLIO FILTER */
+      var filterBtns = document.querySelectorAll('.portfolio-filters li');
+      var cards = document.querySelectorAll('.isotope-item');
+      filterBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          filterBtns.forEach(function (b) { b.classList.remove('filter-active'); });
+          btn.classList.add('filter-active');
+          var f = btn.getAttribute('data-filter');
+          cards.forEach(function (c) { c.style.display = (f === '*' || c.classList.contains(f)) ? '' : 'none'; });
+        });
+      });
+
+      /* ACCORDION */
+      document.querySelectorAll('.accordion-toggle').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var expanded = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', !expanded);
+          var body = btn.nextElementSibling;
+          body.classList.toggle('open');
+        });
+      });
+
+      /* QR CODES — portfolio header, project cards, and credential links */
+      var PORTFOLIO_URL = 'https://mina-y-khalil.github.io/mina-y-khalil/';
+      var qrAPI = 'https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=';
+      var qrImg = document.getElementById('printQR');
+      if (qrImg) qrImg.src = qrAPI + encodeURIComponent(PORTFOLIO_URL);
+
+      // Project QR codes
+      document.querySelectorAll('.project-qr img[data-qr]').forEach(function (img) {
+        img.src = qrAPI + encodeURIComponent(img.getAttribute('data-qr'));
+      });
+
+      // Credential QR codes — inject a QR div after each credential link
+      document.querySelectorAll('.credential-link').forEach(function (link) {
+        var url = link.getAttribute('href');
+        var qrDiv = document.createElement('div');
+        qrDiv.className = 'credential-qr';
+        var a = document.createElement('a');
+        a.href = url;
+        a.target = '_blank';
+        var img = document.createElement('img');
+        img.src = qrAPI + encodeURIComponent(url);
+        img.alt = 'QR';
+        a.appendChild(img);
+        var span = document.createElement('span');
+        span.textContent = 'Scan to verify';
+        qrDiv.appendChild(a);
+        qrDiv.appendChild(span);
+        // Insert after the parent <ul>
+        var parentUl = link.closest('ul');
+        if (parentUl) parentUl.parentNode.insertBefore(qrDiv, parentUl.nextSibling);
+      });
+
+      /* SHARE — copy link + toast */
+      document.getElementById('shareBtn').addEventListener('click', function () {
+        navigator.clipboard.writeText(PORTFOLIO_URL).then(function () {
+          var toast = document.getElementById('shareToast');
+          toast.classList.add('show');
+          setTimeout(function () { toast.classList.remove('show'); }, 2500);
+        });
+      });
+
+      /* PRINT & SAVE PDF */
+      document.getElementById('printBtn').addEventListener('click', function () { window.print(); });
+      document.getElementById('savePdfBtn').addEventListener('click', function () { window.print(); });
+
+      /* CONTACT FORM + MODAL */
+      var contactForm = document.getElementById('contactForm');
+      var formModal = document.getElementById('formModal');
+      var modalLottie = document.getElementById('modalLottie');
+      var modalTitle = document.getElementById('modalTitle');
+      var modalMsg = document.getElementById('modalMsg');
+      var modalClose = document.getElementById('modalClose');
+      var LOTTIE_OK = 'https://redeem-innovations.com/wp-content/uploads/2026/03/Check-Mark.json';
+      var LOTTIE_FAIL = 'https://redeem-innovations.com/wp-content/uploads/2026/03/Failure.json';
+
+      function showModal(ok) {
+        modalLottie.innerHTML = '';
+        var p = document.createElement('lottie-player');
+        p.setAttribute('src', ok ? LOTTIE_OK : LOTTIE_FAIL);
+        p.setAttribute('background', 'transparent');
+        p.setAttribute('speed', '1');
+        p.setAttribute('style', 'width:120px;height:120px;');
+        p.setAttribute('autoplay', '');
+        if (!ok) p.setAttribute('loop', '');
+        modalLottie.appendChild(p);
+        modalTitle.textContent = ok ? 'Message Sent!' : 'Something Went Wrong';
+        modalMsg.textContent = ok
+          ? "Thank you for reaching out! A confirmation email has been sent to your inbox. I'll get back to you soon."
+          : 'Your message could not be sent at this time. Please try again or reach out directly via email.';
+        formModal.classList.add('active');
+      }
+      function hideModal() { formModal.classList.remove('active'); }
+      modalClose.addEventListener('click', hideModal);
+      formModal.addEventListener('click', function (e) { if (e.target === formModal) hideModal(); });
+
+      contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var form = e.target;
+        form.classList.add('sending');
+        var btn = document.getElementById('submitBtn');
+        btn.innerHTML = '<i class="bi bi-hourglass-split"></i> Sending...';
+        fetch('https://formsubmit.co/ajax/mina.y.khalil90@gmail.com', {
+          method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' }
+        }).then(function (r) { r.ok ? (showModal(true), form.reset()) : showModal(false); })
+          .catch(function () { showModal(false); })
+          .finally(function () { form.classList.remove('sending'); btn.innerHTML = '<i class="bi bi-send"></i> Send Message'; });
+      });
+
+    })();
+  </script>
+
 </body>
 </html>
