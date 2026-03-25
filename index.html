@@ -1340,10 +1340,10 @@
         p.setAttribute('autoplay', '');
         if (!ok) p.setAttribute('loop', '');
         modalLottie.appendChild(p);
-        modalTitle.textContent = ok ? 'Message Sent!' : 'Something Went Wrong';
+        modalTitle.textContent = ok ? 'Thanks for reaching out!' : 'Something Went Wrong';
         modalMsg.textContent = ok
-          ? "Thank you for reaching out! A confirmation email has been sent to your inbox. I'll get back to you soon."
-          : 'Your message could not be sent at this time. Please try again or reach out directly via email.';
+          ? "I appreciate you taking the time to write. I'll get back to you as soon as I can.\n— Mina Khalil"
+          : 'Your message could not be sent at this time. Please try again or email me directly at mina.y.khalil90@gmail.com';
         formModal.classList.add('active');
       }
       function hideModal() { formModal.classList.remove('active'); }
