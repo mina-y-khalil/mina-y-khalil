@@ -64,12 +64,11 @@ Check out my [portfolio](https://mina-y-khalil.github.io/mina-y-khalil/) for cli
 ## GitHub Stats
 
 <p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=mina-y-khalil&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=mina-y-khalil&theme=midnight-purple&hide_border=true&ring=9D95FF&fire=9D95FF&currStreakLabel=9D95FF" alt="GitHub Streak" />
 </p>
 
 <p align="center">
-  <img src="http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=mina-y-khalil&theme=github_dark" alt="Top Languages"/>
-  <img src="http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=mina-y-khalil&theme=github_dark" alt="Most Used Languages"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=mina-y-khalil&layout=compact&theme=midnight-purple&hide_border=true&title_color=9D95FF&langs_count=10" alt="Top Languages"/>
 </p>
 
 ## Connect
@@ -87,8 +86,4 @@ Check out my [portfolio](https://mina-y-khalil.github.io/mina-y-khalil/) for cli
   <a href="https://github.com/mina-y-khalil" target="_blank">
     <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
   </a>
-</p>
-
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=mina-y-khalil&style=for-the-badge&color=080075" alt="Profile Views" />
 </p>
