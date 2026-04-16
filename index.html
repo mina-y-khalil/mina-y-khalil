@@ -13,7 +13,7 @@
   <!-- Google Fonts: Sora (display) + DM Sans (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
 
   <!-- Bootstrap Icons (CDN) -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
@@ -147,7 +147,8 @@
     }
 
     .sidebar-social { display: flex; gap: 8px; margin-bottom: 12px; flex-shrink: 0; }
-    .sidebar-social a { display: flex; align-items: center; justify-content: center; }
+    .sidebar-social a { display: flex; align-items: center; justify-content: center; transition: transform var(--transition-base); }
+    .sidebar-social a:hover { transform: scale(1.25); }
 
     /* Print & Save PDF buttons */
     .sidebar-actions {
@@ -415,7 +416,7 @@
     /* ================================================================
        CONTACT
        ────────────────────────────────────────── */
-    .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 48px; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 48px; align-items: stretch; }
     .contact-info { display: flex; flex-direction: column; gap: 20px; }
     .contact-card {
       display: flex; align-items: center; gap: 16px; padding: 20px;
@@ -427,18 +428,92 @@
     .contact-card h4 { font-size: 0.85rem; color: var(--accent); margin-bottom: 2px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
     .contact-card p, .contact-card a { font-size: 0.9rem; color: var(--text-secondary); }
 
-    .contact-form { display: flex; flex-direction: column; gap: 16px; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .form-group label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 6px; letter-spacing: 0.5px; text-transform: uppercase; font-family: var(--font-display); }
-    .form-group input, .form-group textarea {
-      width: 100%; padding: 14px 18px; border-radius: 10px;
-      border: 1.5px solid var(--border-subtle); background: var(--bg-card);
-      color: var(--text-primary); font-family: var(--font-body); font-size: 0.95rem;
-      transition: border-color var(--transition-base); outline: none;
+    /* Terminal window wrapper */
+    .terminal-window {
+      background: #0d0d1a; border: 1px solid rgba(157,149,255,0.15);
+      border-radius: 12px; overflow: hidden; display: flex; flex-direction: column;
     }
-    .form-group input:focus, .form-group textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
-    .form-group textarea { resize: vertical; min-height: 140px; }
-    .contact-form .btn-primary { align-self: flex-start; padding: 14px 40px; }
+    .terminal-header {
+      display: flex; align-items: center; gap: 8px;
+      padding: 12px 16px; background: rgba(157,149,255,0.06);
+      border-bottom: 1px solid rgba(157,149,255,0.1);
+    }
+    .terminal-dot {
+      width: 12px; height: 12px; border-radius: 50%;
+    }
+    .terminal-dot--red { background: #ff5f57; }
+    .terminal-dot--yellow { background: #febc2e; }
+    .terminal-dot--green { background: #28c840; }
+    .terminal-title {
+      flex: 1; text-align: center; font-family: 'Fira Code', monospace;
+      font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.5px;
+    }
+    .terminal-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+
+    .contact-form { display: flex; flex-direction: column; gap: 14px; flex: 1; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-group { display: flex; flex-direction: column; }
+    .form-group label {
+      display: block; font-family: 'Fira Code', monospace;
+      font-size: 0.75rem; font-weight: 500;
+      color: var(--accent); margin-bottom: 6px;
+      letter-spacing: 0.5px;
+    }
+    .form-group label::before { content: '> '; opacity: 0.5; }
+    .form-group input, .form-group textarea {
+      width: 100%; padding: 12px 16px; border-radius: 6px;
+      border: 1px solid rgba(157,149,255,0.12); background: rgba(0,0,0,0.3);
+      color: #e0e0f0; font-family: 'Fira Code', monospace; font-size: 0.85rem;
+      line-height: 1.5;
+      transition: border-color var(--transition-base), box-shadow var(--transition-base); outline: none;
+      caret-color: transparent;
+    }
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(157,149,255,0.1); }
+    .form-group--message { flex: 1; display: flex; flex-direction: column; }
+    .form-group--message .typed-input { flex: 1; display: flex; flex-direction: column; }
+    .form-group--message textarea { flex: 1; resize: none; min-height: 120px; }
+
+    /* Animated typing placeholder */
+    .form-group .typed-input { position: relative; }
+    .form-group .placeholder-text {
+      position: absolute; top: 0; left: 0;
+      padding: 12px 16px;
+      font-family: 'Fira Code', monospace; font-size: 0.85rem;
+      color: var(--text-muted); opacity: 0.4;
+      pointer-events: none;
+      white-space: nowrap; overflow: hidden;
+    }
+    .form-group .placeholder-text::after {
+      content: '|';
+      color: var(--accent);
+      font-weight: 300;
+      animation: blink 0.7s infinite;
+    }
+    .form-group .placeholder-text.hidden { display: none; }
+
+    /* Blinking cursor overlay that follows typed text */
+    .form-group .terminal-cursor {
+      position: absolute; top: 0; left: 0; right: 0;
+      padding: 12px 16px;
+      border: 1px solid transparent;
+      font-family: 'Fira Code', monospace; font-size: 0.85rem;
+      line-height: 1.5;
+      color: transparent; pointer-events: none;
+      white-space: pre-wrap; word-wrap: break-word;
+    }
+    .form-group .terminal-cursor::after {
+      content: '';
+      display: inline-block; width: 2px; height: 1em;
+      background: var(--accent);
+      vertical-align: middle;
+      animation: blink 0.7s infinite;
+    }
+    .form-group .terminal-cursor.hidden { display: none; }
+
+    .contact-form .btn-primary {
+      align-self: flex-start; padding: 12px 32px;
+      font-family: 'Fira Code', monospace; font-size: 0.8rem; letter-spacing: 0.5px;
+    }
     .contact-form.sending .btn-primary { opacity: 0.6; pointer-events: none; }
 
     /* ================================================================
@@ -1166,19 +1241,29 @@
             <div class="contact-card"><lottie-player src="assets/animations/Githubicons2.json" background="transparent" speed="1" loop autoplay class="c-icon" style="width:64px;height:64px;pointer-events:none;"></lottie-player><div><h4>GitHub</h4><p><a href="https://github.com/mina-y-khalil" target="_blank" rel="noopener">github.com/mina-y-khalil</a></p></div></div>
           </div>
 
-          <form id="contactForm" class="contact-form">
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_subject" value="New message from your portfolio site" />
-            <input type="hidden" name="_autoresponse" value="Thanks for reaching out! I'll get back to you soon." />
-            <div class="form-row">
-              <div class="form-group"><label for="name-field">Your Name</label><input type="text" name="name" id="name-field" required /></div>
-              <div class="form-group"><label for="email-field">Your Email</label><input type="email" name="email" id="email-field" required /></div>
+          <div class="terminal-window">
+            <div class="terminal-header">
+              <span class="terminal-dot terminal-dot--red"></span>
+              <span class="terminal-dot terminal-dot--yellow"></span>
+              <span class="terminal-dot terminal-dot--green"></span>
+              <span class="terminal-title">contact-mina</span>
             </div>
-            <div class="form-group"><label for="subject-field">Subject</label><input type="text" name="subject" id="subject-field" required /></div>
-            <div class="form-group"><label for="message-field">Message</label><textarea name="message" id="message-field" rows="6" required></textarea></div>
-            <button type="submit" class="btn btn-primary" id="submitBtn"><i class="bi bi-send"></i> Send Message</button>
-          </form>
+            <div class="terminal-body">
+              <form id="contactForm" class="contact-form">
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_subject" value="New message from your portfolio site" />
+                <input type="hidden" name="_autoresponse" value="Thanks for reaching out! I'll get back to you soon." />
+                <div class="form-row">
+                  <div class="form-group"><label for="name-field">name</label><div class="typed-input"><span class="placeholder-text" data-placeholder="John Doe"></span><span class="terminal-cursor hidden"></span><input type="text" name="name" id="name-field" required /></div></div>
+                  <div class="form-group"><label for="email-field">email</label><div class="typed-input"><span class="placeholder-text" data-placeholder="john@example.com"></span><span class="terminal-cursor hidden"></span><input type="email" name="email" id="email-field" required /></div></div>
+                </div>
+                <div class="form-group"><label for="subject-field">subject</label><div class="typed-input"><span class="placeholder-text" data-placeholder="Let's work together"></span><span class="terminal-cursor hidden"></span><input type="text" name="subject" id="subject-field" required /></div></div>
+                <div class="form-group form-group--message"><label for="message-field">message</label><div class="typed-input"><span class="placeholder-text" data-placeholder="Hi Mina, I'd like to discuss..."></span><span class="terminal-cursor hidden"></span><textarea name="message" id="message-field" required></textarea></div></div>
+                <button type="submit" class="btn btn-primary" id="submitBtn"><i class="bi bi-send"></i> Send</button>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1294,6 +1379,55 @@
           btn.setAttribute('aria-expanded', !expanded);
           var body = btn.nextElementSibling;
           body.classList.toggle('open');
+        });
+      });
+
+      /* ANIMATED FORM PLACEHOLDERS — type out like terminal */
+      document.querySelectorAll('.typed-input').forEach(function (wrap) {
+        var span = wrap.querySelector('.placeholder-text');
+        var cursor = wrap.querySelector('.terminal-cursor');
+        var input = wrap.querySelector('input, textarea');
+        var fullText = span.getAttribute('data-placeholder');
+        var i = 0;
+        span.textContent = '';
+
+        function typePlaceholder() {
+          if (i < fullText.length && !input.value) {
+            span.textContent = fullText.substring(0, i + 1);
+            i++;
+            setTimeout(typePlaceholder, 50 + Math.random() * 40);
+          }
+        }
+
+        function updateCursor() {
+          cursor.textContent = input.value;
+        }
+
+        // Start typing with stagger delay
+        var delay = Array.from(document.querySelectorAll('.typed-input')).indexOf(wrap) * 600;
+        setTimeout(typePlaceholder, 800 + delay);
+
+        // Hide placeholder on focus, show blinking cursor
+        input.addEventListener('focus', function () {
+          span.classList.add('hidden');
+          cursor.classList.remove('hidden');
+          updateCursor();
+        });
+
+        // Update cursor position as user types
+        input.addEventListener('input', function () {
+          updateCursor();
+        });
+
+        // On blur, hide cursor; restore placeholder if empty
+        input.addEventListener('blur', function () {
+          cursor.classList.add('hidden');
+          if (!input.value) {
+            span.classList.remove('hidden');
+            i = 0;
+            span.textContent = '';
+            typePlaceholder();
+          }
         });
       });
 
