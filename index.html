@@ -432,7 +432,14 @@
     .project-card-body p.clamp { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 6px; }
     .see-more { align-self: flex-start; margin-bottom: 14px; padding: 0; border: 0; background: none; font: inherit; font-size: 0.8rem; font-weight: 600; color: var(--primary); cursor: pointer; }
     .see-more:hover { text-decoration: underline; }
-    @media print { .project-card-body p.clamp { display: block; -webkit-line-clamp: unset; overflow: visible; } .see-more, .card-foot .private-note { display: none !important; } }
+    @media print {
+      .project-card-body p.clamp { display: block; -webkit-line-clamp: unset; overflow: visible; }
+      .see-more, .card-foot .private-note, .project-links .stack-open { display: none !important; }
+      /* the screen's column layout must not reach the printed row: text on the left, QR on the right */
+      .project-card { flex-direction: row !important; }
+      .project-card-body { display: block !important; }
+      .card-foot { display: block !important; margin-top: 2px !important; }
+    }
     /* Featured project + «Tech stack & story» pop-up (2026-10-22) */
     .featured-card { border: 1.5px solid rgba(8,0,117,0.25); box-shadow: 0 12px 40px rgba(8,0,117,0.10); }
     .project-links .stack-open {
