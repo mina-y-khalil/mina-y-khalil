@@ -793,6 +793,35 @@
       .credential-qr span { font-size: 5.5pt; color: #888; }
     }
 
+
+    /* ── PDF / Print, second pass (owner, 2026-10-22): no duplicate contact box, section titles kept, certificates and
+       projects in two columns, a footer with page numbers on every page, nothing split across pages ── */
+    @page { size: letter; margin: 12mm 11mm 14mm;
+      @bottom-left { content: "Mina Khalil · mina-y-khalil.github.io/mina-y-khalil"; font: 7pt 'DM Sans', sans-serif; color: #888; }
+      @bottom-right { content: "Page " counter(page) " of " counter(pages); font: 7pt 'DM Sans', sans-serif; color: #888; } }
+    @media print {
+      .print-header .print-skills { font-size: 7.5pt; color: #080075; margin-top: 4px; font-weight: 600; letter-spacing: 0.1px; }
+      /* 1. the header already has the contact details */
+      .resume-summary { display: none !important; }
+      /* 5. section titles (the screen's accordion buttons) printed as headings that stay with what follows */
+      .accordion-toggle { display: block !important; border: 0 !important; background: none !important; padding: 8px 0 3px !important; margin: 0 !important; width: auto !important; text-align: left !important; font-family: var(--font-display) !important; font-size: 10.5pt !important; font-weight: 700 !important; color: #080075 !important; border-bottom: 1px solid #c9c7ef !important; break-after: avoid; page-break-after: avoid; }
+      .accordion-toggle .accordion-arrow { display: none !important; }
+      .accordion-toggle i { color: #080075 !important; margin-right: 4px; }
+      .resume-accordion { break-inside: auto; background: none !important; border: 0 !important; box-shadow: none !important; padding: 0 !important; }
+      .resume-entry, .project-card { break-inside: avoid; }
+      .resume-accordion:last-child { break-inside: avoid; } /* a short last section never leaves its title alone */
+      .section-header { break-after: avoid; page-break-after: avoid; }
+      /* 2. everything after Experience in two columns, smaller QR codes */
+      .resume-accordion:not(:first-child) .accordion-body { display: grid !important; grid-template-columns: 1fr 1fr; gap: 5px; padding-top: 4px !important; }
+      .resume-accordion:not(:first-child) .resume-entry { margin-bottom: 0 !important; }
+      .credential-qr img { width: 34px !important; height: 34px !important; }
+      /* 3. projects in two columns with a small logo */
+      #portfolio .projects-grid { display: grid !important; grid-template-columns: 1fr 1fr; gap: 5px; }
+      #portfolio .project-card { margin-bottom: 0 !important; gap: 8px; }
+      #portfolio .project-card-img { display: block !important; width: 30px !important; height: 30px !important; flex: none; padding: 0 !important; border: 0 !important; background: none !important; aspect-ratio: auto !important; object-fit: contain; }
+      #portfolio .project-qr img { width: 38px; height: 38px; }
+    }
+
     .print-header { display: none; }
     .summary-print-links { display: none; }
     .project-qr { display: none; }
@@ -848,6 +877,7 @@
           <a href="https://github.com/mina-y-khalil">GitHub</a> &nbsp;|&nbsp;
           San Francisco Bay Area, CA
         </p>
+        <p class="print-skills">React · Next.js · TypeScript · JavaScript · Python · Node.js · Express · Flask · PostgreSQL · SQLAlchemy · Redis · Tailwind CSS · Git · Docker · Vercel · Figma</p>
       </div>
       <div class="print-qr">
         <img id="printQR" alt="Portfolio QR" />
@@ -1075,6 +1105,7 @@
           <!-- Languages -->
           <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
           <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
+          <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
           <img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Go" />
           <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
           <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
@@ -1084,6 +1115,7 @@
           <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express.js" />
           <img src="https://img.shields.io/badge/EJS-303030?style=for-the-badge&logo=ejs&logoColor=white" alt="EJS" />
           <!-- Front-end -->
+          <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js" />
           <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
           <img src="https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white" alt="Redux" />
           <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white" alt="Flutter" />
@@ -1100,6 +1132,9 @@
           <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
           <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
           <img src="https://img.shields.io/badge/Render-00979D?style=for-the-badge&logo=render&logoColor=white" alt="Render" />
+          <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel" />
+          <img src="https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=cloudflare&logoColor=white" alt="Cloudflare" />
+          <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Redis" />
           <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white" alt="Postman" />
           <img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white" alt="npm" />
           <!-- Design -->
