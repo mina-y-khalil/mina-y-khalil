@@ -424,6 +424,11 @@
     .sidebar-profile img { pointer-events: none; -webkit-user-drag: none; user-select: none; }
     .sidebar-profile::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: transparent; }
 
+    /* Project pictures: no «Save image» / «Open image in new tab» / drag (owner, 2026-10-22) — right-click and long-press
+       land on the card, not the picture */
+    .project-card-img, .stack-head img { pointer-events: none; -webkit-user-drag: none; user-select: none; -webkit-user-select: none; }
+    .project-card, .stack-head { -webkit-touch-callout: none; }
+
     /* Same-level buttons + «See more» (owner, 2026-10-22): every card is a column, its footer pinned to the bottom */
     .project-card { display: flex; flex-direction: column; }
     .project-card-body { display: flex; flex-direction: column; flex: 1; }
@@ -1512,6 +1517,13 @@
           var f = btn.getAttribute('data-filter');
           cards.forEach(function (c) { c.style.display = (f === '*' || c.classList.contains(f)) ? '' : 'none'; });
         });
+      });
+
+      /* no saving / opening the project pictures or the profile photo (owner, 2026-10-22) */
+      document.querySelectorAll('.project-card-img, .stack-head img, .sidebar-profile img').forEach(function (img) {
+        img.setAttribute('draggable', 'false');
+        img.addEventListener('contextmenu', function (e) { e.preventDefault(); });
+        img.addEventListener('dragstart', function (e) { e.preventDefault(); });
       });
 
       /* PROJECT CARDS — descriptions cut to 3 lines with «See more» when longer (owner, 2026-10-22) */
