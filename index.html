@@ -413,6 +413,63 @@
       background: rgba(8,0,117,0.9); color: #fff; backdrop-filter: blur(8px); z-index: 2;
     }
 
+
+    /* Featured project + «Tech stack & story» pop-up (2026-10-22) */
+    .featured-card { border: 1.5px solid rgba(8,0,117,0.25); box-shadow: 0 12px 40px rgba(8,0,117,0.10); }
+    .project-links .stack-open {
+      display: inline-flex; align-items: center; gap: 6px; cursor: pointer;
+      font-family: inherit; font-size: 0.8rem; font-weight: 600; color: #fff;
+      padding: 6px 14px; border-radius: 50px; border: 1.5px solid var(--primary);
+      background: linear-gradient(135deg, var(--primary), var(--primary-light)); transition: all var(--transition-base);
+    }
+    .project-links .stack-open:hover { transform: translateY(-2px); box-shadow: 0 8px 20px var(--primary-glow); }
+    .private-note { display: inline-flex; align-items: center; gap: 5px; margin-top: 10px; font-size: 0.72rem; color: var(--text-muted); }
+    .stack-overlay {
+      position: fixed; inset: 0; z-index: 9998; background: rgba(5,5,20,0.72); backdrop-filter: blur(8px);
+      display: flex; align-items: center; justify-content: center; padding: 16px;
+      opacity: 0; pointer-events: none; transition: opacity .3s ease;
+    }
+    .stack-overlay.active { opacity: 1; pointer-events: auto; }
+    .stack-box {
+      position: relative; width: 100%; max-width: 860px; max-height: calc(100vh - 32px); overflow-y: auto; overscroll-behavior: contain;
+      background: radial-gradient(120% 80% at 0% 0%, rgba(157,149,255,0.16), transparent 60%), var(--bg-card);
+      border: 1px solid rgba(157,149,255,0.22); border-radius: 24px; padding: 32px; color: var(--text-primary);
+      transform: translateY(16px) scale(0.98); transition: transform .35s var(--ease-out);
+    }
+    .stack-overlay.active .stack-box { transform: none; }
+    .stack-x { position: absolute; top: 14px; right: 14px; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border-subtle); background: rgba(255,255,255,0.04); color: var(--text-primary); font-size: 1.1rem; cursor: pointer; }
+    .stack-x:hover { background: rgba(255,255,255,0.1); }
+    .stack-head { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; padding-right: 40px; }
+    .stack-head img { width: 64px; height: 64px; border-radius: 16px; background: #fff; padding: 6px; object-fit: contain; }
+    .stack-head h3 { font-size: 1.4rem; color: #fff; margin: 0 0 4px; }
+    .stack-head p { margin: 0; font-size: 0.85rem; color: var(--accent-bright); }
+    .stack-about { color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem; margin-bottom: 20px; }
+    .stack-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; margin-bottom: 26px; }
+    .stack-stat { background: rgba(255,255,255,0.04); border: 1px solid var(--border-subtle); border-radius: 14px; padding: 12px 14px; }
+    .stack-stat b { display: block; font-family: var(--font-display); font-size: 1.35rem; color: #fff; }
+    .stack-stat span { display: block; font-size: 0.75rem; line-height: 1.4; color: var(--text-secondary); }
+    .stack-group { margin-bottom: 20px; }
+    .stack-group h4 { font-size: 0.72rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin: 0 0 10px; }
+    .stack-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .stack-chip {
+      display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px 7px 8px; border-radius: 12px;
+      background: rgba(255,255,255,0.05); border: 1px solid var(--border-subtle); font-size: 0.82rem; color: var(--text-primary);
+      opacity: 0; transform: translateY(6px); transition: opacity .35s ease, transform .35s var(--ease-out), border-color .2s, background .2s;
+    }
+    .stack-overlay.active .stack-chip { opacity: 1; transform: none; }
+    .stack-chip:hover { border-color: rgba(157,149,255,0.5); background: rgba(157,149,255,0.10); }
+    .stack-chip .ico { width: 26px; height: 26px; border-radius: 8px; background: #fff; display: grid; place-items: center; flex-shrink: 0; }
+    .stack-chip .ico img { width: 17px; height: 17px; }
+    .stack-chip .ico i { font-size: 15px; color: var(--primary); }
+    .stack-highlights { margin: 6px 0 22px; padding: 0; list-style: none; display: grid; gap: 8px; }
+    .stack-highlights li { display: flex; gap: 10px; font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55; }
+    .stack-highlights li i { color: var(--accent); margin-top: 2px; }
+    .stack-foot { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-subtle); padding-top: 18px; margin-top: 8px; font-size: 0.8rem; color: var(--text-secondary); }
+    .stack-foot a { display: inline-flex; align-items: center; gap: 6px; padding: 10px 20px; border-radius: 50px; background: var(--primary); color: #fff; font-weight: 600; }
+    .stack-foot a:hover { background: var(--primary-light); }
+    @media (max-width: 600px) { .stack-box { padding: 24px 18px; border-radius: 20px; } .stack-head img { width: 52px; height: 52px; } .stack-head h3 { font-size: 1.15rem; } }
+    @media (prefers-reduced-motion: reduce) { .stack-overlay, .stack-box, .stack-chip { transition: none; } }
+
     /* ================================================================
        CONTACT
        ────────────────────────────────────────── */
@@ -625,14 +682,14 @@
     @media print {
       #sidebar, .sidebar-toggle, .sidebar-overlay,
       #hero, #skills, #contact, #footer, #about,
-      .scroll-top, .modal-overlay, #preloader, .share-toast,
+      .scroll-top, .modal-overlay, .stack-overlay, #preloader, .share-toast,
       .award-banner, .section-header .label,
       .portfolio-filters, .project-tag,
       lottie-player, [data-aos] { opacity: 1 !important; transform: none !important; }
 
       #sidebar, .sidebar-toggle, .sidebar-overlay,
       #hero, #skills, #contact, #footer, #about,
-      .scroll-top, .modal-overlay, #preloader, .share-toast,
+      .scroll-top, .modal-overlay, .stack-overlay, #preloader, .share-toast,
       .award-banner, .portfolio-filters, .project-tag,
       lottie-player { display: none !important; }
 
@@ -832,6 +889,36 @@
       <h3 id="modalTitle"></h3>
       <p id="modalMsg"></p>
       <button class="modal-close" id="modalClose">Got it</button>
+    </div>
+  </div>
+
+
+  <!-- ────────────────────────────────────────────────
+       «Tech stack & story» pop-up — Redeem Service (private repository)
+       ──────────────────────────────────────────────── -->
+  <div class="stack-overlay" id="stackRedeemService" role="dialog" aria-modal="true" aria-labelledby="stackRedeemServiceTitle" aria-hidden="true">
+    <div class="stack-box">
+      <button type="button" class="stack-x" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+      <div class="stack-head">
+        <img src="https://redeem-innovations.com/wp-content/uploads/2025/10/redeem-service.png" alt="" />
+        <div><h3 id="stackRedeemServiceTitle">Redeem Service</h3><p>redeem-service.com · English &amp; Arabic</p></div>
+      </div>
+      <p class="stack-about">A home for Coptic Orthodox prayers, the Holy Bible, the daily Church readings, saints, hymns and books — and a toolbox for people who serve in the Church. I rebuilt it from a WordPress site into a custom, fully bilingual Next.js application, designed for phones first, with every old address kept so nothing was lost in search.</p>
+      <div class="stack-stats">
+        <div class="stack-stat"><b>30,000+</b><span>pages, English &amp; Arabic</span></div>
+        <div class="stack-stat"><b>75</b><span>Bible books, a page per verse</span></div>
+        <div class="stack-stat"><b>15+</b><span>tools for church service</span></div>
+        <div class="stack-stat"><b>2</b><span>languages, full right-to-left</span></div>
+      </div>
+      <ul class="stack-highlights">
+        <li><i class="bi bi-book"></i><span>Liturgical readers (Agpeya, Euchologion, Katameros, Psalmody) with up to three languages side by side, a projector «Present» mode and word-for-word texts checked by independent audits.</span></li>
+        <li><i class="bi bi-person-check"></i><span>Accounts with two-step sign-in, Google / Microsoft login, saved Bible notes, highlights, reading progress and quiz results — and leaders' portals with their own reports.</span></li>
+        <li><i class="bi bi-speedometer2"></i><span>An admin dashboard: menus, announcements, users, security center, cookie-free statistics, backups and church registrations.</span></li>
+        <li><i class="bi bi-phone"></i><span>An installable app with offline reading and phone notifications for the day's feast and prayer hours.</span></li>
+        <li><i class="bi bi-shield-check"></i><span>Privacy by design: a versioned, archived privacy policy enforced by an automated check on every build, and AI-scraper protection.</span></li>
+      </ul>
+      <div class="stack-group"><h4>Frontend</h4><div class="stack-chips"><span class="stack-chip"><span class="ico"><img src="https://cdn.simpleicons.org/nextdotjs" alt="" loading="lazy" /></span>Next.js 16 (App Router)</span><span class="stack-chip"><span class="ico"><img src="https://cdn.simpleicons.org/react" alt="" loading="lazy" /></span>React 19</span><span class="stack-chip"><span class="ico"><img src="https://cdn.simpleicons.org/typescript" alt="" loading="lazy" /></span>TypeScript</span><span class="stack-chip"><span class="ico"><img src="https://cdn.simpleicons.org/tailwindcss" alt="" loading="lazy" /></span>Tailwind CSS v4</span><span class="stack-chip"><span class="ico"><img src="https://cdn.simpleicons.org/lottiefiles" alt="" loading="lazy" /></span>Lottie animations</span><span class="stack-chip"><span class="ico"><img src="https://cdn.simpleicons.org/mozilla" alt="" loading="lazy" /></span>PDF.js viewer</span><span class="stack-chip"><span class="ico"><i class="bi bi-translate"></i></span>RTL / Arabic typography</span></div></div><div class="stack-group"><h4>Backend & data</h4><div class="stack-chips"><span class="stack-chip"><span class="ico"><img src="https://cdn.simpleicons.org/nodedotjs" alt="" loading="lazy" /></span>Node.js (Vercel Functions)</span><span class="stack-chip"><span class="ico"><img src="https://cdn.simpleicons.org/upstash" alt="" loading="lazy" /></span>Upstash Redis</span><span class="stack-chip"><span class="ico"><img src="https://cdn.simpleicons.org/cloudflare" alt="" loading="lazy" /></span>Cloudflare R2 (media)</span><span class="stack-chip"><span class="ico"><img src="https://cdn.simpleicons.org/resend" alt="" loading="lazy" /></span>Resend (email)</span><span class="stack-chip"><span class="ico"><img src="https://cdn.simpleicons.org/stripe" alt="" loading="lazy" /></span>Stripe</span><span class="stack-chip"><span class="ico"><img src="https://cdn.simpleicons.org/mailchimp" alt="" loading="lazy" /></span>Mailchimp</span></div></div><div class="stack-group"><h4>Sign-in & security</h4><div class="stack-chips"><span class="stack-chip"><span class="ico"><img src="https://cdn.simpleicons.org/google" alt="" loading="lazy" /></span>Google sign-in</span><span class="stack-chip"><span class="ico"><i class="bi bi-microsoft"></i></span>Microsoft sign-in</span><span class="stack-chip"><span class="ico"><img src="https://cdn.simpleicons.org/apple" alt="" loading="lazy" /></span>Sign in with Apple</span><span class="stack-chip"><span class="ico"><i class="bi bi-shield-lock"></i></span>OpenID Connect + PKCE</span><span class="stack-chip"><span class="ico"><i class="bi bi-envelope-check"></i></span>Two-step email codes</span><span class="stack-chip"><span class="ico"><i class="bi bi-key"></i></span>scrypt password hashing</span></div></div><div class="stack-group"><h4>App & notifications</h4><div class="stack-chips"><span class="stack-chip"><span class="ico"><img src="https://cdn.simpleicons.org/pwa" alt="" loading="lazy" /></span>Installable PWA (offline)</span><span class="stack-chip"><span class="ico"><i class="bi bi-bell"></i></span>Web Push (VAPID, hand-written)</span><span class="stack-chip"><span class="ico"><i class="bi bi-hdd-network"></i></span>Service worker</span></div></div><div class="stack-group"><h4>DevOps & quality</h4><div class="stack-chips"><span class="stack-chip"><span class="ico"><img src="https://cdn.simpleicons.org/vercel" alt="" loading="lazy" /></span>Vercel</span><span class="stack-chip"><span class="ico"><img src="https://cdn.simpleicons.org/githubactions" alt="" loading="lazy" /></span>GitHub Actions</span><span class="stack-chip"><span class="ico"><i class="bi bi-safe"></i></span>Encrypted nightly backups (age)</span><span class="stack-chip"><span class="ico"><i class="bi bi-check2-circle"></i></span>Automated privacy, SEO & link checks</span><span class="stack-chip"><span class="ico"><img src="https://cdn.simpleicons.org/python" alt="" loading="lazy" /></span>Python content pipelines</span></div></div><div class="stack-group"><h4>Built with</h4><div class="stack-chips"><span class="stack-chip"><span class="ico"><img src="https://cdn.simpleicons.org/claude" alt="" loading="lazy" /></span>Claude Code (AI pair programmer)</span></div></div>
+      <div class="stack-foot"><span><i class="bi bi-lock-fill"></i> The code is in a private repository.</span><a href="https://redeem-service.com/" target="_blank" rel="noopener"><i class="bi bi-globe"></i> Visit the live site</a></div>
     </div>
   </div>
 
@@ -1200,15 +1287,15 @@
 
         <div class="projects-grid" data-aos="fade-up" data-aos-delay="200">
 
+          <div class="project-card isotope-item filter-product"><span class="project-tag">WordPress + Custom Dev</span><img src="https://redeem-innovations.com/wp-content/uploads/2025/10/redeem-innovations.png" class="project-card-img" alt="Redeem Innovations" /><div class="project-card-body"><h4>Redeem Innovations</h4><p>E-commerce platform with Stripe integration, custom product addon forms, and configurable product builder. Designed all branding, logos, and visual assets.</p><div class="project-links"><a href="https://redeem-innovations.com/" target="_blank" rel="noopener"><i class="bi bi-globe"></i> Live</a></div></div><div class="project-qr"><img data-qr="https://redeem-innovations.com/" alt="QR" /><span>Scan</span></div></div>
+
+          <div class="project-card isotope-item filter-app filter-product featured-card"><span class="project-tag">Next.js · Full-Stack</span><img src="https://redeem-innovations.com/wp-content/uploads/2025/10/redeem-service.png" class="project-card-img" alt="Redeem Service" /><div class="project-card-body"><h4>Redeem Service</h4><p>Bilingual (English / Arabic) Coptic Orthodox platform, rebuilt from WordPress into a custom Next.js app: 30,000+ pages, accounts with two-step sign-in and Google / Microsoft login, an admin dashboard, an installable app with push notifications, 15+ church-service tools and privacy-first analytics.</p><div class="project-links"><a href="https://redeem-service.com/" target="_blank" rel="noopener"><i class="bi bi-globe"></i> Live</a><button type="button" class="stack-open" data-stack="stackRedeemService" aria-haspopup="dialog"><i class="bi bi-stack"></i> Tech stack &amp; story</button></div><span class="private-note"><i class="bi bi-lock-fill"></i> Private repository</span></div><div class="project-qr"><img data-qr="https://redeem-service.com/" alt="QR" /><span>Scan</span></div></div>
+
           <div class="project-card isotope-item filter-app"><span class="project-tag">Web App</span><img src="https://redeem-innovations.com/wp-content/uploads/2025/08/RedeemBooks-Logo-1.png" class="project-card-img" alt="RedeemBooks" /><div class="project-card-body"><h4>RedeemBooks</h4><p>Full-stack accounting platform for managing vendors, invoices, and payments. Designed, built, and deployed end-to-end.</p><div class="project-links"><a href="https://redeembooks-accounting-app.onrender.com/" target="_blank" rel="noopener"><i class="bi bi-globe"></i> Live</a><a href="https://github.com/mina-y-khalil/redeembooks-accounting-app" target="_blank" rel="noopener"><i class="bi bi-github"></i> Code</a><a href="https://github.com/mina-y-khalil/redeembooks-accounting-app/wiki" target="_blank" rel="noopener"><i class="bi bi-journal-text"></i> Wiki</a><a href="https://www.figma.com/proto/9TTxxHADZzpdZWhMhgtLof/RedeemBooks?node-id=16-2&t=qYEkKMFlXgwODGVd-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=16%3A2" target="_blank" rel="noopener"><i class="bi bi-palette"></i> Figma</a></div></div><div class="project-qr"><img data-qr="https://redeembooks-accounting-app.onrender.com/" alt="QR" /><span>Scan</span></div></div>
 
           <div class="project-card isotope-item filter-app"><span class="project-tag">Web App</span><img src="https://redeem-innovations.com/wp-content/uploads/2025/08/Pintrix.png" class="project-card-img" alt="Pintrix" /><div class="project-card-body"><h4>Pintrix</h4><p>Pinterest-inspired app for sharing and organizing visual ideas with comments and favorites. Group project.</p><div class="project-links"><a href="https://pintrix.onrender.com/" target="_blank" rel="noopener"><i class="bi bi-globe"></i> Live</a><a href="https://github.com/mina-y-khalil/Pintrix---Fullstack" target="_blank" rel="noopener"><i class="bi bi-github"></i> Code</a><a href="https://github.com/mina-y-khalil/Pintrix---Fullstack/wiki" target="_blank" rel="noopener"><i class="bi bi-journal-text"></i> Wiki</a><a href="https://www.figma.com/proto/qjpgI1kclIvb0A16HV2gYt/Pintrix?node-id=1-7&p=f&t=IhRTB8pB7kSodR3R-0&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A7" target="_blank" rel="noopener"><i class="bi bi-palette"></i> Figma</a></div></div><div class="project-qr"><img data-qr="https://pintrix.onrender.com/" alt="QR" /><span>Scan</span></div></div>
 
           <div class="project-card isotope-item filter-app"><span class="project-tag">Web App</span><img src="https://redeem-innovations.com/wp-content/uploads/2025/08/windbnb.png" class="project-card-img" alt="Windbnb" /><div class="project-card-body"><h4>Windbnb</h4><p>Airbnb-style web app with listings, reviews, and responsive design for a smooth booking experience.</p><div class="project-links"><a href="https://windbnb-fullstack.onrender.com/" target="_blank" rel="noopener"><i class="bi bi-globe"></i> Live</a><a href="https://github.com/mina-y-khalil/Windbnb---Fullstack" target="_blank" rel="noopener"><i class="bi bi-github"></i> Code</a></div></div><div class="project-qr"><img data-qr="https://windbnb-fullstack.onrender.com/" alt="QR" /><span>Scan</span></div></div>
-
-          <div class="project-card isotope-item filter-product"><span class="project-tag">WordPress + Custom Dev</span><img src="https://redeem-innovations.com/wp-content/uploads/2025/10/redeem-innovations.png" class="project-card-img" alt="Redeem Innovations" /><div class="project-card-body"><h4>Redeem Innovations</h4><p>E-commerce platform with Stripe integration, custom product addon forms, and configurable product builder. Designed all branding, logos, and visual assets.</p><div class="project-links"><a href="https://redeem-innovations.com/" target="_blank" rel="noopener"><i class="bi bi-globe"></i> Live</a></div></div><div class="project-qr"><img data-qr="https://redeem-innovations.com/" alt="QR" /><span>Scan</span></div></div>
-
-          <div class="project-card isotope-item filter-product"><span class="project-tag">WordPress + Custom Dev</span><img src="https://redeem-innovations.com/wp-content/uploads/2025/10/redeem-service.png" class="project-card-img" alt="Redeem Service" /><div class="project-card-body"><h4>Redeem Service</h4><p>1,200+ page bilingual platform with Stripe payments, audio integration, custom admin database, and internal tools (team generator, service management). Full branding and visual identity.</p><div class="project-links"><a href="https://redeem-service.com/" target="_blank" rel="noopener"><i class="bi bi-globe"></i> Live</a></div></div><div class="project-qr"><img data-qr="https://redeem-service.com/" alt="QR" /><span>Scan</span></div></div>
 
           <div class="project-card isotope-item filter-product"><span class="project-tag">WordPress</span><img src="https://redeem-innovations.com/wp-content/uploads/2025/10/evolve-logo-port.png" class="project-card-img" alt="Evolve Genomix" /><div class="project-card-body"><h4>Evolve Genomix</h4><p>Biotech company website with responsive design and content architecture for genomic technologies.</p><div class="project-links"><a href="https://www.evolvegenomix.com/" target="_blank" rel="noopener"><i class="bi bi-globe"></i> Live</a></div></div><div class="project-qr"><img data-qr="https://www.evolvegenomix.com/" alt="QR" /><span>Scan</span></div></div>
 
@@ -1371,6 +1458,25 @@
           cards.forEach(function (c) { c.style.display = (f === '*' || c.classList.contains(f)) ? '' : 'none'; });
         });
       });
+
+      /* «TECH STACK & STORY» POP-UPS — open from .stack-open[data-stack], close with ✕, Esc or a click outside */
+      var lastStackOpener = null;
+      function closeStack(o) { o.classList.remove('active'); o.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; if (lastStackOpener) lastStackOpener.focus(); }
+      document.querySelectorAll('.stack-open').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var o = document.getElementById(btn.getAttribute('data-stack'));
+          if (!o) return;
+          lastStackOpener = btn;
+          o.querySelectorAll('.stack-chip').forEach(function (c, i) { c.style.transitionDelay = (120 + i * 25) + 'ms'; });
+          o.classList.add('active'); o.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden';
+          o.querySelector('.stack-x').focus();
+        });
+      });
+      document.querySelectorAll('.stack-overlay').forEach(function (o) {
+        o.addEventListener('click', function (e) { if (e.target === o) closeStack(o); });
+        o.querySelector('.stack-x').addEventListener('click', function () { closeStack(o); });
+      });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') document.querySelectorAll('.stack-overlay.active').forEach(closeStack); });
 
       /* ACCORDION */
       document.querySelectorAll('.accordion-toggle').forEach(function (btn) {
