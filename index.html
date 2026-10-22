@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- keep the images (the profile photo above all) out of Google Images; the page itself stays in search -->
+  <meta name="robots" content="noimageindex" />
   <title>Mina Khalil — Full-Stack Software Engineer</title>
   <meta name="description" content="Portfolio of Mina Khalil — Full-Stack Software Engineer specializing in React, Flask, Python, and scalable web applications." />
   <meta name="keywords" content="Mina Khalil, Full-Stack, Software Engineer, React, Redux, Flask, SQLAlchemy, Portfolio, Python Developer" />
@@ -129,7 +131,7 @@
       display: flex; flex-direction: column; align-items: center;
       padding: 32px 20px 24px;
       transition: transform 0.4s var(--ease-out);
-      overflow-y: auto;
+      overflow-y: auto; overflow-x: hidden; /* no sideways scrollbar (2026-10-22) */
     }
 
     .sidebar-profile {
@@ -414,6 +416,13 @@
     }
 
 
+
+
+    /* Profile photo: harder to save or copy (2026-10-22) — a transparent layer takes the clicks / long-press,
+       so «Save image» isn't offered; the photo itself is small (320 px) with no metadata */
+    .sidebar-profile { position: relative; -webkit-touch-callout: none; user-select: none; -webkit-user-select: none; }
+    .sidebar-profile img { pointer-events: none; -webkit-user-drag: none; user-select: none; }
+    .sidebar-profile::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: transparent; }
 
     /* Same-level buttons + «See more» (owner, 2026-10-22): every card is a column, its footer pinned to the bottom */
     .project-card { display: flex; flex-direction: column; }
