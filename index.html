@@ -99,6 +99,7 @@
        Section headers
        ────────────────────────────────────────── */
     .section { padding: var(--section-padding); position: relative; }
+    #about.section { padding-top: 72px; }
     .section-light { background: var(--bg-light); color: var(--text-dark); }
 
     .section-header { text-align: center; margin-bottom: 64px; }
@@ -198,8 +199,9 @@
     /* ================================================================
        Hero
        ────────────────────────────────────────── */
+    /* the welcome screen fits its content (owner, 2026-10-22: «empty space before About Me») — no more full-screen gap */
     #hero {
-      min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      min-height: clamp(540px, 78vh, 760px); padding: 96px 0 72px; display: flex; align-items: center; justify-content: center;
       position: relative; overflow: hidden;
       background: linear-gradient(135deg, var(--primary-dark) 0%, var(--bg-dark) 60%, #0d0d30 100%);
     }
@@ -1165,7 +1167,7 @@
         </div>
 
         <!-- Summary — always visible, no accordion -->
-        <div class="resume-entry resume-summary" data-aos="fade-up" style="max-width:720px;margin:0 auto 24px;">
+        <div class="resume-entry resume-summary" data-aos="fade-up" style="max-width:800px;margin:0 auto 24px;">
           <h4>Mina Khalil</h4>
           <p>Full-Stack Software Engineer &amp; Accounting Data Analyst passionate about modern UIs, robust APIs, and data-driven products.</p>
           <div class="summary-links">
