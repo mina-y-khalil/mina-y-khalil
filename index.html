@@ -427,6 +427,8 @@
       transition: all var(--transition-base);
     }
     .project-links a:hover { background: var(--primary); color: #fff; }
+    /* the label sits in a strip of its own above the logo, never on top of it (owner, 2026-10-23) */
+    .project-card-img { padding-top: 52px; }
     .project-tag {
       position: absolute; top: 12px; right: 12px; padding: 4px 12px; border-radius: 50px;
       font-size: 0.7rem; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase;
@@ -868,7 +870,7 @@
       .form-row { grid-template-columns: 1fr; }
       .projects-grid { grid-template-columns: 1fr; gap: 18px; }
       /* phones (2026-10-23): the square logo filled the whole screen width — a short banner instead */
-      .project-card-img { aspect-ratio: auto; height: 150px; padding: 18px; }
+      .project-card-img { aspect-ratio: auto; height: 170px; padding: 48px 18px 16px; }
       .project-card-body { padding: 18px 20px 20px; }
       .project-card-body p { margin-bottom: 12px; }
       .project-card:hover { transform: none; }
@@ -1759,10 +1761,20 @@
         setTimeout(function () {
           window.removeEventListener('beforeprint', onBefore);
           if (opened) return;
+          // only go to the PDF once it exists (it appears after the first workflow run) — never a 404
           var toast = document.getElementById('printToast');
-          toast.classList.add('show');
-          setTimeout(function () { window.location.href = RESUME_PDF; }, 600);
-          setTimeout(function () { toast.classList.remove('show'); }, 3000);
+          function show(html, ms) {
+            toast.innerHTML = html;
+            toast.classList.add('show');
+            setTimeout(function () { toast.classList.remove('show'); }, ms);
+          }
+          fetch(RESUME_PDF, { method: 'HEAD', cache: 'no-store' }).then(function (r) {
+            if (!r.ok) throw new Error(r.status);
+            show('<i class="bi bi-file-earmark-pdf"></i> Opening the PDF version…', 3000);
+            setTimeout(function () { window.location.href = RESUME_PDF; }, 600);
+          }).catch(function () {
+            show('<i class="bi bi-info-circle"></i> This browser can\'t print — open the page in Safari or Chrome', 5000);
+          });
         }, 1500);
       }
       document.getElementById('printBtn').addEventListener('click', printResume);
