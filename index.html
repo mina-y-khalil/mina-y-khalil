@@ -3,11 +3,27 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- keep the images (the profile photo above all) out of Google Images; the page itself stays in search -->
-  <meta name="robots" content="noimageindex" />
+  <!-- keep the images (the profile photo above all) out of Google Images and out of AI image training; the page itself stays in search -->
+  <meta name="robots" content="noimageindex, noai, noimageai" />
   <title>Mina Khalil — Full-Stack Software Engineer</title>
-  <meta name="description" content="Portfolio of Mina Khalil — Full-Stack Software Engineer specializing in React, Flask, Python, and scalable web applications." />
-  <meta name="keywords" content="Mina Khalil, Full-Stack, Software Engineer, React, Redux, Flask, SQLAlchemy, Portfolio, Python Developer" />
+  <meta name="description" content="Portfolio of Mina Khalil — Full-Stack Software Engineer building with Next.js, React, TypeScript, Node.js, Flask and Python: scalable, bilingual web applications." />
+  <meta name="keywords" content="Mina Khalil, Full-Stack, Software Engineer, Next.js, React, TypeScript, Node.js, Express, Redux, Flask, SQLAlchemy, PostgreSQL, Python Developer, Portfolio" />
+
+  <!-- Link previews (LinkedIn, WhatsApp, iMessage, Slack, X) — 2026-10-23 -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Mina Khalil" />
+  <meta property="og:title" content="Mina Khalil — Full-Stack Software Engineer" />
+  <meta property="og:description" content="Next.js, React, TypeScript, Node.js, Flask and Python — bilingual (English / Arabic) web apps, built end-to-end." />
+  <meta property="og:url" content="https://mina-y-khalil.github.io/mina-y-khalil/" />
+  <meta property="og:image" content="https://mina-y-khalil.github.io/mina-y-khalil/assets/img/og-preview.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Mina Khalil — Full-Stack Software Engineer" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mina Khalil — Full-Stack Software Engineer" />
+  <meta name="twitter:description" content="Next.js, React, TypeScript, Node.js, Flask and Python — bilingual (English / Arabic) web apps, built end-to-end." />
+  <meta name="twitter:image" content="https://mina-y-khalil.github.io/mina-y-khalil/assets/img/og-preview.png" />
+  <link rel="canonical" href="https://mina-y-khalil.github.io/mina-y-khalil/" />
 
   <!-- Favicon -->
   <link href="assets/img/favicon.png" rel="icon" />
@@ -425,6 +441,10 @@
     .sidebar-profile { position: relative; -webkit-touch-callout: none; user-select: none; -webkit-user-select: none; }
     .sidebar-profile img { pointer-events: none; -webkit-user-drag: none; user-select: none; }
     .sidebar-profile::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: transparent; }
+    /* (2026-10-23) the photo is a CSS background, not an <img>: no «Save image» / «Open image», nothing for image
+       grabbers or reader views to pick up; the file itself carries a copyright notice */
+    .sidebar-photo { width: 100%; height: 100%; background: url("assets/img/mina.jpg") center / cover no-repeat; }
+    @media print { .sidebar-profile { display: none !important; } }
 
     /* Project pictures: no «Save image» / «Open image in new tab» / drag (owner, 2026-10-22) — right-click and long-press
        land on the card, not the picture */
@@ -846,7 +866,12 @@
       .info-grid { grid-template-columns: 1fr; }
       .contact-grid { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
-      .projects-grid { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; gap: 18px; }
+      /* phones (2026-10-23): the square logo filled the whole screen width — a short banner instead */
+      .project-card-img { aspect-ratio: auto; height: 150px; padding: 18px; }
+      .project-card-body { padding: 18px 20px 20px; }
+      .project-card-body p { margin-bottom: 12px; }
+      .project-card:hover { transform: none; }
       .hero-title { font-size: clamp(2rem,8vw,3rem); }
       .award-content { flex-direction: column; gap: 16px; }
     }
@@ -890,6 +915,7 @@
 
   <!-- Toast popup when user copies portfolio link -->
   <div class="share-toast" id="shareToast"><i class="bi bi-check-circle"></i> Portfolio link copied!</div>
+  <div class="share-toast" id="printToast"><i class="bi bi-file-earmark-pdf"></i> Opening the PDF version…</div>
 
   <!-- ────────────────────────────────────────────────
        MOBILE SIDEBAR OVERLAY
@@ -908,7 +934,7 @@
        ──────────────────────────────────────────────── -->
   <header id="sidebar">
     <div class="sidebar-profile">
-      <img src="assets/img/mina.jpg" alt="Mina Khalil" width="320" height="320" draggable="false" oncontextmenu="return false" />
+      <div class="sidebar-photo" role="img" aria-label="Mina Khalil"></div>
     </div>
     <div class="sidebar-name">Mina Khalil</div>
 
@@ -1386,17 +1412,17 @@
 
           <div class="project-card isotope-item filter-app filter-product featured-card"><span class="project-tag">Next.js · Full-Stack</span><img src="assets/img/projects/redeem-service.png" class="project-card-img" alt="Redeem Service" /><div class="project-card-body"><h4>Redeem Service</h4><p>Bilingual (English / Arabic) Coptic Orthodox platform, rebuilt from WordPress into a custom Next.js app: 30,000+ pages, accounts with two-step sign-in and Google / Microsoft login, an admin dashboard, an installable app with push notifications, 15+ church-service tools and privacy-first analytics.</p><div class="card-foot"><span class="private-note"><i class="bi bi-lock-fill"></i> Private repository</span><div class="project-links"><a href="https://redeem-service.com/" target="_blank" rel="noopener"><i class="bi bi-globe"></i> Live</a><button type="button" class="stack-open" data-stack="stackRedeemService" aria-haspopup="dialog"><i class="bi bi-stack"></i> Tech stack &amp; story</button></div></div></div><div class="project-qr"><img data-qr="https://redeem-service.com/" alt="QR" /><span>Scan</span></div></div>
 
-          <div class="project-card isotope-item filter-app"><span class="project-tag">Web App</span><img src="assets/img/projects/RedeemBooks-Logo-1.png" class="project-card-img" alt="RedeemBooks" /><div class="project-card-body"><h4>RedeemBooks</h4><p>Full-stack accounting platform for managing vendors, invoices, and payments. Designed, built, and deployed end-to-end.</p><div class="card-foot"><div class="project-links"><a href="https://github.com/mina-y-khalil/redeembooks-accounting-app" target="_blank" rel="noopener"><i class="bi bi-github"></i> Code</a><a href="https://github.com/mina-y-khalil/redeembooks-accounting-app/wiki" target="_blank" rel="noopener"><i class="bi bi-journal-text"></i> Wiki</a><a href="https://www.figma.com/proto/9TTxxHADZzpdZWhMhgtLof/RedeemBooks?node-id=16-2&t=qYEkKMFlXgwODGVd-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=16%3A2" target="_blank" rel="noopener"><i class="bi bi-palette"></i> Figma</a></div></div></div><div class="project-qr"><img data-qr="https://github.com/mina-y-khalil/redeembooks-accounting-app" alt="QR" /><span>Scan</span></div></div>
+          <div class="project-card isotope-item filter-app"><span class="project-tag">Flask · React · Full-Stack</span><img src="assets/img/projects/RedeemBooks-Logo-1.png" class="project-card-img" alt="RedeemBooks" /><div class="project-card-body"><h4>RedeemBooks</h4><p>Full-stack accounting platform for managing vendors, invoices, and payments. Designed, built, and deployed end-to-end.</p><div class="card-foot"><div class="project-links"><a href="https://github.com/mina-y-khalil/redeembooks-accounting-app" target="_blank" rel="noopener"><i class="bi bi-github"></i> Code</a><a href="https://github.com/mina-y-khalil/redeembooks-accounting-app/wiki" target="_blank" rel="noopener"><i class="bi bi-journal-text"></i> Wiki</a><a href="https://www.figma.com/proto/9TTxxHADZzpdZWhMhgtLof/RedeemBooks?node-id=16-2&t=qYEkKMFlXgwODGVd-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=16%3A2" target="_blank" rel="noopener"><i class="bi bi-palette"></i> Figma</a></div></div></div><div class="project-qr"><img data-qr="https://github.com/mina-y-khalil/redeembooks-accounting-app" alt="QR" /><span>Scan</span></div></div>
 
           <div class="project-card isotope-item filter-app"><span class="project-tag">Next.js · Web App</span><img src="assets/img/projects/liftfolio.png" class="project-card-img" alt="Liftfolio" /><div class="project-card-body"><h4>Liftfolio</h4><p>Structured gym programs, every workout laid out clearly in your language (English and Arabic, right-to-left): a weekly split with rotating workouts, supersets, start / finish exercise photos, session time estimates and a built-in rest timer.</p><div class="card-foot"><span class="private-note"><i class="bi bi-lock-fill"></i> Private repository</span><div class="project-links"><a href="https://liftfolio.vercel.app/en" target="_blank" rel="noopener"><i class="bi bi-globe"></i> Live</a><button type="button" class="stack-open" data-stack="stackLiftfolio" aria-haspopup="dialog"><i class="bi bi-stack"></i> Tech stack &amp; story</button></div></div></div><div class="project-qr"><img data-qr="https://liftfolio.vercel.app/en" alt="QR" /><span>Scan</span></div></div>
 
-          <div class="project-card isotope-item filter-app"><span class="project-tag">Web App</span><img src="assets/img/projects/Pintrix.png" class="project-card-img" alt="Pintrix" /><div class="project-card-body"><h4>Pintrix</h4><p>Pinterest-inspired app for sharing and organizing visual ideas with comments and favorites. Group project.</p><div class="card-foot"><div class="project-links"><a href="https://github.com/mina-y-khalil/Pintrix---Fullstack" target="_blank" rel="noopener"><i class="bi bi-github"></i> Code</a><a href="https://github.com/mina-y-khalil/Pintrix---Fullstack/wiki" target="_blank" rel="noopener"><i class="bi bi-journal-text"></i> Wiki</a><a href="https://www.figma.com/proto/qjpgI1kclIvb0A16HV2gYt/Pintrix?node-id=1-7&p=f&t=IhRTB8pB7kSodR3R-0&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A7" target="_blank" rel="noopener"><i class="bi bi-palette"></i> Figma</a></div></div></div><div class="project-qr"><img data-qr="https://github.com/mina-y-khalil/Pintrix---Fullstack" alt="QR" /><span>Scan</span></div></div>
+          <div class="project-card isotope-item filter-app"><span class="project-tag">Flask · React · Full-Stack</span><img src="assets/img/projects/Pintrix.png" class="project-card-img" alt="Pintrix" /><div class="project-card-body"><h4>Pintrix</h4><p>Pinterest-inspired app for sharing and organizing visual ideas with comments and favorites. Group project.</p><div class="card-foot"><div class="project-links"><a href="https://github.com/mina-y-khalil/Pintrix---Fullstack" target="_blank" rel="noopener"><i class="bi bi-github"></i> Code</a><a href="https://github.com/mina-y-khalil/Pintrix---Fullstack/wiki" target="_blank" rel="noopener"><i class="bi bi-journal-text"></i> Wiki</a><a href="https://www.figma.com/proto/qjpgI1kclIvb0A16HV2gYt/Pintrix?node-id=1-7&p=f&t=IhRTB8pB7kSodR3R-0&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A7" target="_blank" rel="noopener"><i class="bi bi-palette"></i> Figma</a></div></div></div><div class="project-qr"><img data-qr="https://github.com/mina-y-khalil/Pintrix---Fullstack" alt="QR" /><span>Scan</span></div></div>
 
-          <div class="project-card isotope-item filter-app"><span class="project-tag">Web App</span><img src="assets/img/projects/windbnb.png" class="project-card-img" alt="Windbnb" /><div class="project-card-body"><h4>Windbnb</h4><p>Airbnb-style web app with listings, reviews, and responsive design for a smooth booking experience.</p><div class="card-foot"><div class="project-links"><a href="https://github.com/mina-y-khalil/Windbnb---Fullstack" target="_blank" rel="noopener"><i class="bi bi-github"></i> Code</a></div></div></div><div class="project-qr"><img data-qr="https://github.com/mina-y-khalil/Windbnb---Fullstack" alt="QR" /><span>Scan</span></div></div>
+          <div class="project-card isotope-item filter-app"><span class="project-tag">Express · React · Full-Stack</span><img src="assets/img/projects/windbnb.png" class="project-card-img" alt="Windbnb" /><div class="project-card-body"><h4>Windbnb</h4><p>Airbnb-style web app with listings, reviews, and responsive design for a smooth booking experience.</p><div class="card-foot"><div class="project-links"><a href="https://github.com/mina-y-khalil/Windbnb---Fullstack" target="_blank" rel="noopener"><i class="bi bi-github"></i> Code</a></div></div></div><div class="project-qr"><img data-qr="https://github.com/mina-y-khalil/Windbnb---Fullstack" alt="QR" /><span>Scan</span></div></div>
 
-          <div class="project-card isotope-item filter-product"><span class="project-tag">WordPress</span><img src="assets/img/projects/evolve-logo-port.png" class="project-card-img" alt="Evolve Genomix" /><div class="project-card-body"><h4>Evolve Genomix</h4><p>Biotech company website with responsive design and content architecture for genomic technologies.</p><div class="card-foot"><div class="project-links"><a href="https://www.evolvegenomix.com/" target="_blank" rel="noopener"><i class="bi bi-globe"></i> Live</a></div></div></div><div class="project-qr"><img data-qr="https://www.evolvegenomix.com/" alt="QR" /><span>Scan</span></div></div>
+          <div class="project-card isotope-item filter-product"><span class="project-tag">WordPress + Custom Dev</span><img src="assets/img/projects/evolve-logo-port.png" class="project-card-img" alt="Evolve Genomix" /><div class="project-card-body"><h4>Evolve Genomix</h4><p>Biotech company website with responsive design and content architecture for genomic technologies.</p><div class="card-foot"><div class="project-links"><a href="https://www.evolvegenomix.com/" target="_blank" rel="noopener"><i class="bi bi-globe"></i> Live</a></div></div></div><div class="project-qr"><img data-qr="https://www.evolvegenomix.com/" alt="QR" /><span>Scan</span></div></div>
 
-          <div class="project-card isotope-item filter-product"><span class="project-tag">WordPress</span><img src="assets/img/projects/JRMY.png" class="project-card-img" alt="JRMY Medical Transportation" /><div class="project-card-body"><h4>JRMY Medical Transportation</h4><p>Medical transportation site with online booking system and service scheduling.</p><div class="card-foot"><div class="project-links"><a href="https://jrmymed.com/" target="_blank" rel="noopener"><i class="bi bi-globe"></i> Live</a></div></div></div><div class="project-qr"><img data-qr="https://jrmymed.com/" alt="QR" /><span>Scan</span></div></div>
+          <div class="project-card isotope-item filter-product"><span class="project-tag">WordPress + Custom Dev</span><img src="assets/img/projects/JRMY.png" class="project-card-img" alt="JRMY Medical Transportation" /><div class="project-card-body"><h4>JRMY Medical Transportation</h4><p>Medical transportation site with online booking system and service scheduling.</p><div class="card-foot"><div class="project-links"><a href="https://jrmymed.com/" target="_blank" rel="noopener"><i class="bi bi-globe"></i> Live</a></div></div></div><div class="project-qr"><img data-qr="https://jrmymed.com/" alt="QR" /><span>Scan</span></div></div>
 
         </div>
       </div>
@@ -1557,7 +1583,7 @@
       });
 
       /* no saving / opening the project pictures or the profile photo (owner, 2026-10-22) */
-      document.querySelectorAll('.project-card-img, .stack-head img, .sidebar-profile img').forEach(function (img) {
+      document.querySelectorAll('.project-card-img, .stack-head img, .sidebar-profile').forEach(function (img) {
         img.setAttribute('draggable', 'false');
         img.addEventListener('contextmenu', function (e) { e.preventDefault(); });
         img.addEventListener('dragstart', function (e) { e.preventDefault(); });
@@ -1687,18 +1713,60 @@
         if (parentUl) parentUl.parentNode.insertBefore(qrDiv, parentUl.nextSibling);
       });
 
-      /* SHARE — copy link + toast */
+      /* SHARE — the phone's share sheet on touch screens; elsewhere copy the link (2026-10-23) */
+      var shareToast = document.getElementById('shareToast');
+      function showShareToast(html, ms) {
+        shareToast.innerHTML = html;
+        shareToast.classList.add('show');
+        setTimeout(function () { shareToast.classList.remove('show'); }, ms || 2500);
+      }
+      function copyLink() {
+        function copied() { showShareToast('<i class="bi bi-check-circle"></i> Portfolio link copied!'); }
+        function failed() { showShareToast('<i class="bi bi-link-45deg"></i> ' + PORTFOLIO_URL.replace('https://', ''), 6000); }
+        if (navigator.clipboard && window.isSecureContext) { navigator.clipboard.writeText(PORTFOLIO_URL).then(copied, failed); return; }
+        // older / in-app browsers: copy through a hidden text box
+        var box = document.createElement('textarea');
+        box.value = PORTFOLIO_URL; box.setAttribute('readonly', ''); box.style.cssText = 'position:fixed;opacity:0;';
+        document.body.appendChild(box); box.select();
+        var ok = false;
+        try { ok = document.execCommand('copy'); } catch (err) { /* stays false */ }
+        document.body.removeChild(box);
+        ok ? copied() : failed();
+      }
       document.getElementById('shareBtn').addEventListener('click', function () {
-        navigator.clipboard.writeText(PORTFOLIO_URL).then(function () {
-          var toast = document.getElementById('shareToast');
-          toast.classList.add('show');
-          setTimeout(function () { toast.classList.remove('show'); }, 2500);
-        });
+        var touch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+        if (touch && navigator.share) {
+          navigator.share({ title: 'Mina Khalil — Full-Stack Software Engineer', url: PORTFOLIO_URL }).catch(function (err) {
+            if (!err || err.name !== 'AbortError') copyLink(); // closing the sheet isn't a failure
+          });
+          return;
+        }
+        copyLink();
       });
 
       /* PRINT & SAVE PDF */
-      document.getElementById('printBtn').addEventListener('click', function () { window.print(); });
-      document.getElementById('savePdfBtn').addEventListener('click', function () { window.print(); });
+      // In-app browsers (LinkedIn, Instagram, Gmail…) ignore window.print() without an error — if the print
+      // dialog never opens (no «beforeprint»), open the PDF that GitHub Actions renders from this page on
+      // every push (.github/workflows/resume-pdf.yml), so it always matches the site (2026-10-23)
+      var RESUME_PDF = 'assets/Mina-Khalil-Resume.pdf';
+      function printResume() {
+        var opened = false;
+        function onBefore() { opened = true; }
+        window.addEventListener('beforeprint', onBefore);
+        // close the mobile menu first so it isn't left open behind the dialog
+        closeSidebar();
+        try { window.print(); } catch (err) { /* treated as not opened */ }
+        setTimeout(function () {
+          window.removeEventListener('beforeprint', onBefore);
+          if (opened) return;
+          var toast = document.getElementById('printToast');
+          toast.classList.add('show');
+          setTimeout(function () { window.location.href = RESUME_PDF; }, 600);
+          setTimeout(function () { toast.classList.remove('show'); }, 3000);
+        }, 1500);
+      }
+      document.getElementById('printBtn').addEventListener('click', printResume);
+      document.getElementById('savePdfBtn').addEventListener('click', printResume);
 
       /* CONTACT FORM + MODAL */
       var contactForm = document.getElementById('contactForm');
